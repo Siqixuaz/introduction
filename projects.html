@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="projects-page" lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>代表项目｜Project Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="projects.js" defer></script>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <nav class="nav">
+    <a class="brand" href="index.html" aria-label="返回首页">
+      <span class="brand-mark">P</span>
+      <span>PERSONAL HOME</span>
+    </a>
+  </nav>
+
+  <header class="hero">
+    <div class="shell hero-layout reveal">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> SELECTED PROJECTS</div>
+        <h1>如切如磋，<br>如琢如磨。</h1>
+
+        <div class="hero-actions">
+          <a href="#featured" class="btn primary">查看置顶项目 →</a>
+          <a href="#projects" class="btn secondary">按分类浏览</a>
+        </div>
+      </div>
+
+      <aside class="latest-card" aria-label="最新项目预览">
+        <div class="latest-label">
+          <span>LATEST PROJECT</span>
+          <span>NEW</span>
+        </div>
+        <div class="latest-visual no-image">
+          <!-- 替换为你的最新项目图片，例如 latest-project.jpg -->
+          <img src="latest-project.jpg" alt="最新项目图片" />
+        </div>
+        <h2 class="latest-title">最新项目名称</h2>
+        <p class="latest-desc">这里放一行最新成果简介，控制在一句话内最清晰。</p>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="featured" class="section">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker">Pinned Project</div>
+          <h2>绝知此事要躬行</h2>
+        </div>
+      </div>
+
+      <article class="featured-card reveal" data-category="practice">
+        <div class="featured-visual no-image">
+          <!-- 替换为你的置顶项目封面，例如 featured-project.jpg -->
+          <img src="社会实践.png" alt="置顶代表项目封面" />
+        </div>
+        <div class="featured-content">
+          <div>
+            <div class="featured-index">01 / BEST PROJECT</div>
+            <h3>赓续党建红，<br>守护生态绿。</h3>
+            <p>
+              2025年盐城工学院“赓续党建红，守护生态绿”暑期三下乡社会实践团，依托盐城工学院徐秀娟黄海湿地保护志愿协会，开展徐秀娟精神讲解传播，呼吁人们保护湿地环境。
+            </p>
+            <div class="tags">
+              <span class="tag">全国代表项目</span>
+              <span class="tag">2025年三下乡省级重点团队</span>
+              <span class="tag">优秀调研报告</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="featured-meta">
+              <div class="meta-box">
+                <span class="meta-label">ROLE</span>
+                <span class="meta-value">团队负责人</span>
+              </div>
+              <div class="meta-box">
+                <span class="meta-label">OUTPUT</span>
+                <span class="meta-value">方案 / 页面 / 报告</span>
+              </div>
+              <div class="meta-box">
+                <span class="meta-label">YEAR</span>
+                <span class="meta-value">2025</span>
+              </div>
+            </div>
+            <div class="hero-actions featured-actions">
+              <a class="btn dark" href="https://dxs.moe.gov.cn/zx/a/hd_dxszxhdbm_2025dwqc_cgzs_ldqc/250925/2017760.shtml">查看报道 →</a>
+              <a class="project-link project-index-link" href="#projects">继续浏览更多项目</a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="projects" class="section projects-section">
+      <div class="section-head reveal">
+        <div>
+          <div class="kicker">Category Index</div>
+          <h2>俯察品类之盛</h2>
+        </div>
+      </div>
+
+      <div class="index-panel reveal" aria-label="项目分类索引">
+        <div class="index-top">
+          <div>
+            <div class="kicker kicker-gold">Browse by type</div>
+            <h2>分类索引</h2>
+          </div>
+        </div>
+
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all"><strong>全部</strong><span>ALL</span></button>
+          <button class="filter-btn" data-filter="research"><strong>研究 / 学术</strong><span>RESEARCH</span></button>
+          <button class="filter-btn" data-filter="design"><strong>设计 / 创作</strong><span>DESIGN</span></button>
+          <button class="filter-btn" data-filter="practice"><strong>社会实践</strong><span>PRACTICE</span></button>
+          <button class="filter-btn" data-filter="personal"><strong>个人 / 长期</strong><span>PERSONAL</span></button>
+        </div>
+      </div>
+
+      <div class="project-grid" aria-label="更多代表项目列表">
+        <article class="project-card reveal" data-category="research">
+          <div class="project-thumb no-image">
+            <img src="papercc.png" alt="研究学术项目图片" />
+          </div>
+          <div class="project-card-body">
+            <span class="project-type">RESEARCH / 学术研究</span>
+            <h3>2025“华中杯”数学建模</h3>
+            <p>2025年“华中杯”数学建模竞赛全国一等奖作品《校园共享单车的调度与维护问题》</p>
+            <div class="project-card-foot">
+              <span class="role-label">ROLE / 作者</span>
+              <a class="project-link" href="cert2.html">详情 →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="practice">
+          <div class="project-thumb no-image">
+            <img src="photofix.jpg" alt="实践策划项目图片" />
+          </div>
+          <div class="project-card-body">
+            <span class="project-type">PRACTICE / 实践策划</span>
+            <h3>“AI进社区”社会实践调研团</h3>
+            <p>“AI技术进社区——零距离体验未来”主题实践活动。融合了科技体验与人文关怀，为社区居民带来了别样的科技体验。</p>
+            <div class="project-card-foot">
+              <span class="role-label">ROLE / 团队队长</span>
+              <a class="project-link" href="https://js.cnr.cn/qxlb/20250711/t20250711_527256821.shtml">详情 →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="practice">
+          <div class="project-thumb no-image">
+            <img src="calligraphy.jpg" alt="实践策划项目图片" />
+          </div>
+          <div class="project-card-body">
+            <span class="project-type">PRACTICE / 实践策划</span>
+            <h3>翰墨迎新春</h3>
+            <p>盐城工学院书法协会举办的进社区送春联活动，既是对过去一年的告别，也是对未来新一年的展望。</p>
+            <div class="project-card-foot">
+              <span class="role-label">ROLE / 团队队长</span>
+              <a class="project-link" href="https://www.ycit.cn/info/1020/77856.htm">详情 →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="design">
+          <div class="project-thumb no-image">
+            <img src="project-design.jpg" alt="设计创作项目图片" />
+          </div>
+          <div class="project-card-body">
+            <span class="project-type">DESIGN / 设计创作</span>
+            <h3>视觉设计或宣传物料</h3>
+            <p>展示海报、活动主视觉、报名页面、视觉系统或排版设计，建议配成品图和设计说明。</p>
+            <div class="project-card-foot">
+              <span class="role-label">ROLE / 视觉统筹</span>
+              <a class="project-link" href="#">详情 →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="research">
+          <div class="project-thumb no-image">
+            <img src="project-data.jpg" alt="数据分析项目图片" />
+          </div>
+          <div class="project-card-body">
+            <span class="project-type">DATA / 数据分析</span>
+            <h3>问卷调研或数据报告</h3>
+            <p>展示问卷设计、数据清洗、可视化图表和结论提炼，适合放方法说明和核心图表。</p>
+            <div class="project-card-foot">
+              <span class="role-label">ROLE / 分析整理</span>
+              <a class="project-link" href="#">详情 →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="personal">
+          <div class="project-thumb no-image">
+            <img src="project-personal.jpg" alt="个人长期项目图片" />
+          </div>
+          <div class="project-card-body">
+            <span class="project-type">PERSONAL / 长期计划</span>
+            <h3>个人创作或长期项目</h3>
+            <p>展示博客、视频账号、摄影、写作、学习档案或长期作品整理计划。</p>
+            <div class="project-card-foot">
+              <span class="role-label">ROLE / 独立创作</span>
+              <a class="project-link" href="#">详情 →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Personal Project Portfolio</span>
+    <span>Clean structure, consistent texture.</span>
+  </footer>
+
+  
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="experience-page" lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>工作经历｜Experience Archive</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="experience.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <a class="brand" href="index.html" aria-label="返回首页">
+      <span class="brand-mark">Z</span>
+      <span>Personal Portfolio</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="projects.html">代表项目</a>
+      <a class="active" href="experience.html">工作经历</a>
+      <a href="#contact">联系</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="dot"></span> EXPERIENCE ARCHIVE</div>
+        <h1>山水万程，<br>皆有好运。</h1>
+        <div class="hero-actions">
+          <a class="btn primary" href="#archive">查看经历索引 →</a>
+          <a class="btn secondary" href="index.html">返回首页</a>
+        </div>
+      </div>
+
+      <aside class="summary-card" aria-label="经历概览">
+        <div class="summary-top">
+          <strong>经历概览</strong>
+          <span>CURATED RECORDS</span>
+        </div>
+        <div class="summary-line">
+          <div class="summary-row"><b>03</b><small>3 段实习经历，覆盖政务数据、科研机构与基层政务实践。</small></div>
+          <div class="summary-row"><b>09</b><small>9 项大型志愿服务，涵盖赛事、会议、演唱会、音乐节、漫展与生态公益。</small></div>
+          <div class="summary-row"><b>05</b><small>5 段学生干部经历，突出班级建设、协会治理、部门管理与社团活动组织。</small></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="featured">
+      <article class="featured-experience" aria-label="置顶经历">
+        <div class="featured-copy">
+          <div class="featured-topline">
+            <div class="kicker">Featured Experience</div>
+            <span class="featured-status"><i aria-hidden="true"></i>任职中</span>
+          </div>
+
+          <span class="featured-unit-label">任职单位</span>
+          <h2>盐城市经济技术开发区<br>新城街道办事处</h2>
+
+          <div class="featured-role">
+            <span>职位名称</span>
+            <strong>团工委兼职副书记</strong>
+          </div>
+
+          <p class="featured-summary">入选2026年盐城市“青年实干家”计划，于新城街道办事处担任团工委兼职副书记。</p>
+
+          <dl class="featured-meta">
+            <div>
+              <dt>计划名称</dt>
+              <dd>2026年盐城市“青年实干家”计划</dd>
+            </div>
+            <div>
+              <dt>任职时间</dt>
+              <dd><time>2026.07.15—2027.07.15</time></dd>
+            </div>
+          </dl>
+        </div>
+
+        <aside class="featured-visual" aria-label="置顶经历图片">
+          <div class="featured-photo no-image">
+            <img src="featured-experience.jpg" alt="新城街道办事处置顶经历照片">
+          </div>
+        </aside>
+      </article>
+    </section>
+
+    <section class="section" id="archive">
+      <div class="archive-shell">
+        <aside class="side-index">
+          <div class="side-head">
+            <strong>分类索引</strong>
+            <span>CLICK TO SWITCH</span>
+          </div>
+          <div class="index-list">
+            <button class="index-btn" type="button" data-filter="internship" data-title="实习经历"><span>实习经历</span><small>03</small></button>
+            <button class="index-btn" type="button" data-filter="volunteer" data-title="志愿服务"><span>志愿服务</span><small>09</small></button>
+            <button class="index-btn" type="button" data-filter="cadre" data-title="学生干部"><span>学生干部</span><small>05</small></button>
+          </div>
+        </aside>
+
+        <div class="archive-content">
+          <div class="detail-header">
+            <div>
+              <div class="kicker">Selected Archive</div>
+              <h3 id="archiveTitle">实习经历</h3>
+            </div>
+            <p id="archiveIntro">这里会显示当前类别下的多条详细经历。你可以继续点击左侧索引切换类别。</p>
+          </div>
+
+          <div class="timeline" id="timeline"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <span>朱钦迟 · Personal Academic Portfolio © 2026</span>
+      <span>Experience Archive / Internship · Volunteer · Student Cadre</span>
+    </div>
+  </footer>
+
+  
+</body>
+</html>

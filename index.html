@@ -1,680 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html class="home-page" lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>思齐轩 | 朱钦迟个人主页</title>
-  <style>
-    :root {
-      --bg: #f6f3ec;
-      --text: #171717;
-      --muted: #6c6a63;
-      --line: rgba(20, 20, 20, .12);
-      --card: rgba(255, 255, 255, .74);
-      --accent: #1c4d3a;
-      --accent-2: #b98a4a;
-      --dark: #101613;
-      --shadow: 0 28px 80px rgba(15, 22, 18, .14);
-      --radius: 28px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 16% 10%, rgba(185, 138, 74, .18), transparent 28%),
-        radial-gradient(circle at 86% 22%, rgba(28, 77, 58, .14), transparent 26%),
-        var(--bg);
-      overflow-x: hidden;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .noise {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .045;
-      z-index: 60;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    }
-
-    .nav {
-      position: fixed;
-      top: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 40;
-      width: min(1120px, calc(100% - 36px));
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 14px 12px 18px;
-      border: 1px solid rgba(255, 255, 255, .28);
-      background: rgba(12, 18, 15, .34);
-      color: rgba(255,255,255,.92);
-      backdrop-filter: blur(18px);
-      border-radius: 999px;
-      box-shadow: 0 18px 50px rgba(0,0,0,.18);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      letter-spacing: .04em;
-    }
-
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      color: var(--dark);
-      background: rgba(255,255,255,.9);
-      font-family: Georgia, serif;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      color: rgba(255,255,255,.82);
-      font-size: 14px;
-    }
-
-    .nav-links a {
-      padding: 9px 14px;
-      border-radius: 999px;
-      transition: .25s ease;
-    }
-
-    .nav-links a:hover {
-      background: rgba(255, 255, 255, .14);
-      color: white;
-    }
-
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: grid;
-      align-items: center;
-      padding: 132px 6vw 86px;
-      overflow: hidden;
-      color: white;
-      isolation: isolate;
-      background: #101613;
-    }
-
-    .hero-media {
-      position: absolute;
-      inset: 0;
-      z-index: -3;
-      overflow: hidden;
-      background:
-        linear-gradient(120deg, rgba(10,16,13,.96), rgba(28,77,58,.78), rgba(185,138,74,.64)),
-        radial-gradient(circle at 28% 22%, rgba(255,255,255,.22), transparent 26%),
-        radial-gradient(circle at 76% 72%, rgba(255,255,255,.15), transparent 28%);
-      animation: backgroundBreath 11s ease-in-out infinite alternate;
-    }
-
-    .hero-media video,
-    .hero-media img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transform: scale(1.02);
-      transition: opacity .9s ease, transform 4s ease;
-    }
-
-    .hero-media.loaded video,
-    .hero-media.loaded img {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(circle at 50% 45%, rgba(0,0,0,.18) 0%, rgba(0,0,0,.44) 58%, rgba(0,0,0,.68) 100%),
-        linear-gradient(180deg, rgba(0,0,0,.42) 0%, rgba(0,0,0,.10) 44%, rgba(0,0,0,.66) 100%);
-    }
-
-    .hero::after {
-      content: none;
-    }
-
-    @keyframes backgroundBreath {
-      from { filter: saturate(1) brightness(1); transform: scale(1); }
-      to { filter: saturate(1.18) brightness(1.04); transform: scale(1.04); }
-    }
-
-    .hero-inner {
-      width: min(1280px, 100%);
-      margin: 0 auto;
-      display: block;
-      text-align: left;
-    }
-
-    .hero-copy {
-      width: 100%;
-      max-width: none;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      width: fit-content;
-      padding: 9px 13px;
-      color: rgba(255,255,255,.88);
-      font-weight: 800;
-      letter-spacing: .10em;
-      font-size: 13px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.22);
-      background: rgba(255,255,255,.10);
-      backdrop-filter: blur(14px);
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent-2);
-      box-shadow: 0 0 0 6px rgba(185, 138, 74, .18);
-    }
-
-    h1 {
-      margin: 26px 0 24px;
-      width: 100%;
-      max-width: none;
-      font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
-      font-size: clamp(48px, 5.7vw, 88px);
-      line-height: 1.14;
-      letter-spacing: -.06em;
-      text-shadow: 0 18px 60px rgba(0,0,0,.38);
-    }
-
-    h1 .line {
-      display: block;
-      white-space: nowrap;
-    }
-
-    .lead {
-      max-width: 720px;
-      color: rgba(255,255,255,.82);
-      font-size: clamp(16px, 1.8vw, 20px);
-      line-height: 2.05;
-      margin: 0;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 14px 20px;
-      border-radius: 999px;
-      font-weight: 800;
-      border: 1px solid rgba(255,255,255,.20);
-      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-    }
-
-    .btn.primary {
-      color: var(--dark);
-      background: rgba(255,255,255,.92);
-      box-shadow: 0 18px 34px rgba(0, 0, 0, .20);
-    }
-
-    .btn.secondary {
-      color: white;
-      background: rgba(255,255,255,.12);
-      backdrop-filter: blur(14px);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 20px 44px rgba(0,0,0,.22);
-    }
-
-    .hero-panel {
-      padding: 24px;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.18);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 24px 70px rgba(0,0,0,.18);
-    }
-
-    .media-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 8px 11px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.14);
-      border: 1px solid rgba(255,255,255,.18);
-      color: rgba(255,255,255,.78);
-      font-size: 12px;
-      letter-spacing: .06em;
-      margin-bottom: 72px;
-    }
-
-    .pulse {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #f2d19a;
-      box-shadow: 0 0 0 0 rgba(242,209,154,.5);
-      animation: pulse 1.7s infinite;
-    }
-
-    @keyframes pulse {
-      70% { box-shadow: 0 0 0 8px rgba(242,209,154,0); }
-      100% { box-shadow: 0 0 0 0 rgba(242,209,154,0); }
-    }
-
-    .hero-panel h2 {
-      margin: 0 0 13px;
-      font-family: Georgia, "Noto Serif SC", serif;
-      font-size: clamp(28px, 3.3vw, 46px);
-      line-height: 1.06;
-      letter-spacing: -.04em;
-    }
-
-    .hero-panel p {
-      margin: 0;
-      color: rgba(255,255,255,.74);
-      line-height: 1.78;
-    }
-
-    .scroll-tip {
-      position: absolute;
-      left: 50%;
-      bottom: 24px;
-      transform: translateX(-50%);
-      z-index: 3;
-      color: rgba(255,255,255,.72);
-      font-size: 12px;
-      letter-spacing: .12em;
-      writing-mode: horizontal-tb;
-    }
-
-    .scroll-tip::after {
-      content: "";
-      display: block;
-      width: 1px;
-      height: 34px;
-      margin: 10px auto 0;
-      background: linear-gradient(to bottom, rgba(255,255,255,.65), transparent);
-    }
-
-    .section {
-      width: min(1120px, calc(100% - 36px));
-      margin: 0 auto;
-      padding: 76px 0;
-    }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      align-items: end;
-      margin-bottom: 28px;
-    }
-
-    .section-kicker {
-      color: var(--accent);
-      font-weight: 800;
-      letter-spacing: .12em;
-      font-size: 13px;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      margin: 10px 0 0;
-      font-family: Georgia, "Noto Serif SC", serif;
-      font-size: clamp(34px, 4vw, 56px);
-      line-height: 1.05;
-      letter-spacing: -.04em;
-    }
-
-    .section-note {
-      max-width: 360px;
-      color: var(--muted);
-      line-height: 1.8;
-      margin: 0;
-    }
-
-    .section-side {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .more-link {
-      flex: 0 0 auto;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 11px 17px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 800;
-      color: var(--accent);
-      background: rgba(255,255,255,.68);
-      border: 1px solid rgba(28, 77, 58, .18);
-      box-shadow: 0 14px 34px rgba(16, 22, 19, .08);
-      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-    }
-
-    .more-link:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,.9);
-      box-shadow: 0 18px 42px rgba(16, 22, 19, .12);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 16px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,.6);
-      border-radius: 24px;
-      padding: 28px;
-      box-shadow: 0 18px 50px rgba(16, 22, 19, .08);
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 26px 64px rgba(16, 22, 19, .13);
-    }
-
-    .card-number {
-      font-family: Georgia, serif;
-      color: var(--accent-2);
-      font-size: 18px;
-      margin-bottom: 38px;
-    }
-
-    .card h3 {
-      margin: 0 0 12px;
-      font-size: 22px;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.85;
-    }
-
-    .works {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 16px;
-    }
-
-    .work-main {
-      min-height: 470px;
-      border-radius: 28px;
-      padding: 34px;
-      color: white;
-      background:
-        linear-gradient(145deg, rgba(16,22,19,.92), rgba(28,77,58,.78)),
-        radial-gradient(circle at 70% 20%, rgba(185,138,74,.45), transparent 30%);
-      box-shadow: var(--shadow);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .work-main::after {
-      content: "";
-      position: absolute;
-      right: -90px;
-      bottom: -90px;
-      width: 280px;
-      height: 280px;
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: 50%;
-    }
-
-    .tag {
-      padding: 8px 11px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.16);
-      border: 1px solid rgba(255,255,255,.22);
-      backdrop-filter: blur(14px);
-      font-size: 12px;
-      letter-spacing: .06em;
-    }
-
-    .work-main h3 {
-      font-family: Georgia, "Noto Serif SC", serif;
-      font-size: clamp(34px, 4.3vw, 58px);
-      letter-spacing: -.04em;
-      line-height: 1.08;
-      margin: 22px 0 14px;
-      max-width: 620px;
-    }
-
-    .work-main p {
-      color: rgba(255,255,255,.76);
-      line-height: 1.85;
-      max-width: 550px;
-    }
-
-    .work-list {
-      display: grid;
-      gap: 16px;
-    }
-
-    .mini-work {
-      min-height: 146px;
-      padding: 24px;
-      border-radius: 24px;
-      border: 1px solid rgba(20,20,20,.08);
-      background: rgba(255,255,255,.62);
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
-    }
-
-    .mini-icon {
-      width: 48px;
-      height: 48px;
-      flex: 0 0 48px;
-      border-radius: 16px;
-      background: rgba(28,77,58,.1);
-      display: grid;
-      place-items: center;
-      color: var(--accent);
-      font-weight: 900;
-    }
-
-    .mini-work h4 {
-      margin: 0 0 8px;
-      font-size: 18px;
-    }
-
-    .mini-work p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px;
-    }
-
-    .timeline {
-      position: relative;
-      display: grid;
-      gap: 14px;
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 22px;
-      padding: 24px;
-      border-radius: 24px;
-      background: rgba(255,255,255,.6);
-      border: 1px solid rgba(20,20,20,.08);
-    }
-
-    .time {
-      color: var(--accent);
-      font-weight: 900;
-    }
-
-    .timeline-item h3 { margin: 0 0 8px; }
-    .timeline-item p { margin: 0; color: var(--muted); line-height: 1.75; }
-
-    .contact-panel {
-      border-radius: 34px;
-      background: var(--dark);
-      color: white;
-      padding: 42px;
-      display: grid;
-      grid-template-columns: 1fr .8fr;
-      gap: 26px;
-      align-items: center;
-      box-shadow: var(--shadow);
-    }
-
-    .contact-panel h2 { margin-top: 0; }
-    .contact-panel p { color: rgba(255,255,255,.72); line-height: 1.85; }
-
-    .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    .social-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 17px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 800;
-      color: white;
-      background: rgba(255,255,255,.11);
-      border: 1px solid rgba(255,255,255,.18);
-      backdrop-filter: blur(14px);
-      transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
-    }
-
-    .social-btn:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,.18);
-      box-shadow: 0 16px 36px rgba(0,0,0,.18);
-    }
-
-    .contact-box {
-      padding: 26px;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.08);
-    }
-
-    .contact-line {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255,255,255,.12);
-    }
-
-    .contact-line:last-child { border-bottom: 0; }
-    .contact-line span:first-child { color: rgba(255,255,255,.56); }
-
-    .footer {
-      width: min(1120px, calc(100% - 36px));
-      margin: 0 auto;
-      padding: 22px 0 46px;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      font-size: 14px;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .8s ease, transform .8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 920px) {
-      .nav-links { display: none; }
-      .hero { padding: 116px 22px 72px; }
-      h1 { font-size: clamp(44px, 9vw, 76px); }
-      h1 .line { white-space: normal; }
-      .works, .contact-panel { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; }
-      .section-head { align-items: start; flex-direction: column; }
-      .section-side { width: 100%; justify-content: space-between; align-items: flex-start; }
-      .timeline-item { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 560px) {
-      .hero { padding: 104px 18px 70px; }
-      .hero-actions { flex-direction: column; width: 100%; }
-      .btn { width: 100%; }
-      .stats { grid-template-columns: 1fr; }
-      .contact-panel { padding: 28px; }
-      .section-side { flex-direction: column; }
-      .more-link { width: 100%; }
-      .contact-line { flex-direction: column; gap: 6px; }
-      .footer { flex-direction: column; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="朱钦迟的个人主页，展示个人介绍、代表项目、工作经历与联系方式。">
+  <meta name="theme-color" content="#101613">
+  <title>思齐轩｜朱钦迟个人主页</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="index.js" defer></script>
 </head>
 <body>
-  <div class="noise"></div>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div class="noise" aria-hidden="true"></div>
 
-  <nav class="nav">
-    <a class="brand" href="#top" aria-label="返回首页">
-      <span class="brand-mark">P</span>
+  <nav class="nav" aria-label="主导航">
+    <a class="brand" href="#top" aria-label="返回首页顶部">
+      <span class="brand-mark" aria-hidden="true">P</span>
       <span>PERSONAL HOME</span>
     </a>
     <div class="nav-links">
@@ -685,279 +26,177 @@
     </div>
   </nav>
 
-  <main id="top" class="hero">
-    <div id="heroMedia" class="hero-media" aria-hidden="true"></div>
+  <main id="main-content">
+    <header id="top" class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="hero-video.webm" type="video/webm">
+        </video>
+      </div>
 
-    <div class="hero-inner">
-      <section class="hero-copy reveal">
-        <div class="eyebrow"><span class="dot"></span> A PERSONAL CURATED PAGE</div>
-        <h1><span class="line">前路灿灿，</span><span class="line">人生若只如初见。</span></h1>
-
-        <div class="hero-actions">
-          <a href="#works" class="btn primary">查看代表项目 →</a>
-          <a href="#about" class="btn secondary">了解我的风格</a>
+      <div class="hero-inner">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="dot"></span>A PERSONAL CURATED PAGE</p>
+          <h1>
+            <span class="line">前路灿灿，</span>
+            <span class="line">人生若只如初见。</span>
+          </h1>
+          <div class="hero-actions">
+            <a href="#works" class="btn primary">查看代表项目 <span aria-hidden="true">→</span></a>
+            <a href="#about" class="btn secondary">了解我的风格</a>
+          </div>
         </div>
-      </section>
-
-    </div>
-
-    <div class="scroll-tip">SCROLL</div>
-  </main>
-
-  <section id="about" class="section">
-    <div class="section-head reveal">
-      <div>
-        <div class="section-kicker">About</div>
-        <h2>浮生半日</h2>
       </div>
-    </div>
 
-    <div class="about-grid">
-      <article class="card reveal">
-        <div class="card-number">01</div>
-        <h3>腹有诗书气自华</h3>
-        <p>朱钦迟，男，共青团员。南京师范大学在读教育学硕士研究生，专业是教育信息工程，研究方向为人工智能及其教育应用。</p>
-      </article>
-      <article class="card reveal">
-        <div class="card-number">02</div>
-        <h3>丈夫未可轻年少</h3>
-        <p>2024年度国家励志奖学金；2023年度、2024年度盐城工学院百佳青年学生</p>
-      </article>
-      <article class="card reveal">
-        <div class="card-number">03</div>
-        <h3>书画琴棋诗酒花</h3>
-        <p>擅长写意山水中国画、熟悉围棋象棋、热爱诗词</p>
-      </article>
-    </div>
-  </section>
+      <a class="scroll-tip" href="#about">SCROLL</a>
+    </header>
 
-  <section id="works" class="section">
-    <div class="section-head reveal">
-      <div>
-        <div class="section-kicker">Selected Works</div>
-        <h2>如琢如磨</h2>
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="section-head reveal">
+        <div>
+          <p class="section-kicker">About</p>
+          <h2 id="about-title">浮生半日</h2>
+        </div>
       </div>
-      <div class="section-side">
+
+      <div class="about-grid">
+        <article class="card reveal">
+          <p class="card-number">01</p>
+          <h3>腹有诗书气自华</h3>
+          <p>朱钦迟，男，共青团员。南京师范大学在读教育学硕士研究生，专业为教育信息工程，研究方向为人工智能及其教育应用。</p>
+        </article>
+        <article class="card reveal">
+          <p class="card-number">02</p>
+          <h3>丈夫未可轻年少</h3>
+          <p>获2024年度国家励志奖学金，获评盐城工学院2023年度、2024年度“百佳青年学生”。</p>
+        </article>
+        <article class="card reveal">
+          <p class="card-number">03</p>
+          <h3>书画琴棋诗酒花</h3>
+          <p>擅长写意山水中国画，熟悉围棋、象棋，热爱诗词与传统文化。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="works" class="section" aria-labelledby="works-title">
+      <div class="section-head reveal">
+        <div>
+          <p class="section-kicker">Selected Works</p>
+          <h2 id="works-title">如琢如磨</h2>
+        </div>
         <a class="more-link" href="projects.html" aria-label="查看更多项目">更多 <span aria-hidden="true">→</span></a>
       </div>
-    </div>
 
-    <div class="works">
-      <article class="work-main reveal">
-        <div>
-          <span class="tag">FEATURED PROJECT</span>
-          <h3>交通需求规划与可达率研究</h3>
-          <p>2024年第二十一届五一数学建模竞赛全国一等奖作品。朱钦迟负责论文撰写与数学建模任务。该竞赛是由江苏省工业与应用数学学会举办，是江苏省省级赛事目录，全国一等奖获奖率为5%</p>
-        </div>
-        <a class="btn secondary" href="#contact">联系我了解更多</a>
-      </article>
-
-      <div class="work-list">
-        <article class="mini-work reveal">
-          <div class="mini-icon">A</div>
+      <div class="works">
+        <article class="work-main reveal">
           <div>
-            <h4>2028奥运奖牌榜的预测分析</h4>
-            <p>2025年（第十一届）全国大学生统计建模大赛江苏赛区本科生组三等奖作品。该竞赛由中国统计教育学会主办，在2025年教育部认可84项大学生赛事目录榜单中（NO.68）</p>
+            <span class="tag">FEATURED PROJECT</span>
+            <h3>交通需求规划与可达率研究</h3>
+            <p>2024年第二十一届五一数学建模竞赛全国一等奖作品。朱钦迟负责论文撰写与数学建模任务。该竞赛由江苏省工业与应用数学学会主办，入选江苏省省级赛事目录，全国一等奖获奖率为5%。</p>
+          </div>
+          <a class="btn secondary work-action" href="#contact">联系我了解更多</a>
+        </article>
+
+        <div class="work-list">
+          <article class="mini-work reveal">
+            <div class="mini-icon" aria-hidden="true">A</div>
+            <div>
+              <h3>2028奥运奖牌榜的预测分析</h3>
+              <p>2025年全国大学生统计建模大赛江苏赛区本科生组三等奖作品。该赛事由中国统计教育学会主办，入选2025年教育部认可的84项大学生赛事目录。</p>
+            </div>
+          </article>
+          <article class="mini-work reveal">
+            <div class="mini-icon" aria-hidden="true">B</div>
+            <div>
+              <h3>赓续党建红，守护生态绿</h3>
+              <p>朱钦迟作为队长带领的暑期“三下乡”社会实践团队，入选中国大学生在线2025年“小我融入大我，青春献给祖国”高校师生主题社会实践全国代表性团队。</p>
+            </div>
+          </article>
+          <article class="mini-work reveal">
+            <div class="mini-icon" aria-hidden="true">C</div>
+            <div>
+              <h3>“AI进社区”社会实践调研团</h3>
+              <p>朱钦迟作为队长带领的盐城市暑期社会实践调研团队，其“科技＋公益”科技惠民活动获央广网、盐城新闻网等媒体报道。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="section" aria-labelledby="timeline-title">
+      <div class="section-head reveal">
+        <div>
+          <p class="section-kicker">Work Experience</p>
+          <h2 id="timeline-title">山水万程</h2>
+        </div>
+        <a class="more-link" href="experience.html" aria-label="查看更多工作经历">更多 <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <time class="time" datetime="2026-07">2026.07—<br>2027.07</time>
+          <div>
+            <h3>盐城市亭湖区新城街道团工委 · 兼职副书记</h3>
+            <p>盐城市团委“青年实干家”计划。</p>
           </div>
         </article>
-        <article class="mini-work reveal">
-          <div class="mini-icon">B</div>
+        <article class="timeline-item reveal">
+          <time class="time" datetime="2025-07">2025.07—<br>2025.08</time>
           <div>
-            <h4>赓续党建红，守护生态绿</h4>
-            <p>是朱钦迟作为队长带领的暑期三下乡社会实践团队，中国大学生在线报道的2025年“小我融入大我，青春献给祖国”高校师生主题社会实践全国代表性团队</p>
+            <h3>盐城市盐都区数据局 · 数据应用办事员</h3>
+            <p>参与区级政务数据平台运维、数据清洗、分类与核查工作，提升政务数据质量。</p>
           </div>
         </article>
-        <article class="mini-work reveal">
-          <div class="mini-icon">C</div>
+        <article class="timeline-item reveal">
+          <time class="time" datetime="2024-07">2024.07—<br>2024.08</time>
           <div>
-            <h4>“AI进社区”社会实践调研团</h4>
-            <p>是朱钦迟作为队长带领的盐城市暑期社会实践调研团队，央广网、盐城新闻网等报道的“科技+公益”社会实践的代表性科技惠民活动</p>
+            <h3>江苏黄海湿地研究院 · 综合部实习生</h3>
+            <p>完成科研资料数字化整理与生态监测数据分析，协助科普活动的筹备与执行。</p>
+          </div>
+        </article>
+        <article class="timeline-item reveal">
+          <time class="time" datetime="2023-07">2023.07—<br>2023.08</time>
+          <div>
+            <h3>扬州市宝应县安宜镇人民政府 · 党群工作局</h3>
+            <p>处理公文收发与信息录入，参与社区党建活动的策划与执行。</p>
           </div>
         </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="timeline" class="section">
-    <div class="section-head reveal">
-      <div>
-        <div class="section-kicker">Work Experience</div>
-        <h2>山水万程</h2>
-      </div>
-      <a class="more-link" href="experience.html" aria-label="查看更多项目">更多 <span aria-hidden="true">→</span></a>
-    </div>
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="contact-panel reveal">
+        <div>
+          <p class="section-kicker">Contact</p>
+          <h2 id="contact-title">云中谁寄锦书来</h2>
+          <div class="social-links" aria-label="社交平台入口">
+            <a class="social-btn" href="https://www.xiaohongshu.com/user/profile/64ec02f900000000010052d6" target="_blank" rel="noopener noreferrer">小红书主页 <span aria-hidden="true">→</span></a>
+            <a class="social-btn" href="https://www.douyin.com/user/MS4wLjABAAAAjrnMft0YHrrr-YoewR7ahaWKKX87CLOmIkyCh5w4J7bDDeOxVGtI_eGYWJrwD1FB?from_tab_name=main&amp;vid=7644936083704646245" target="_blank" rel="noopener noreferrer">抖音主页 <span aria-hidden="true">→</span></a>
+            <a class="social-btn" href="https://space.bilibili.com/3461582206012161" target="_blank" rel="noopener noreferrer">Bilibili主页 <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
 
-    <div class="timeline">
-      <article class="timeline-item reveal">
-        <div class="time">2026.07~<br>2027.07</div>
-        <div>
-          <h3>盐城市亭湖区·新城街道团工委·兼职副书记</h3>
-          <p>盐城市团委“青年实干家”计划</p>
-        </div>
-      </article>
-      <article class="timeline-item reveal">
-        <div class="time">2025.07~<br>2025.08</div>
-        <div>
-          <h3>盐城市盐都区·数据局·数据应用岗位办事员</h3>
-          <p>参与区级政务数据平台运维、数据清洗、分类与核查工作，提升政务数据质量。</p>
-        </div>
-      </article>
-      <article class="timeline-item reveal">
-        <div class="time">2024.07~<br>2024.08</div>
-        <div>
-          <h3>江苏黄海湿地研究院·综合部实习生</h3>
-          <p>完成科研资料数字化整理，生态监测数据分析，协助科普活动筹备与执行。</p>
-        </div>
-      </article>
-      <article class="timeline-item reveal">
-        <div class="time">2023.07~<br>2023.08</div>
-        <div>
-          <h3>扬州市宝应县·安宜镇人民政府党群工作局</h3>
-          <p>处理公文收发、信息录入，参与社区党建活动策划与执行。</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <div class="contact-panel reveal">
-      <div>
-        <div class="section-kicker">Contact</div>
-        <h2>云中谁寄锦书来</h2>
-        <div class="social-links" aria-label="社交平台入口">
-          <a class="social-btn" href="https://www.xiaohongshu.com/user/profile/64ec02f900000000010052d6"
-             target="_blank" rel="noopener noreferrer">小红书主页 <span aria-hidden="true">↗</span></a>
-          <a class="social-btn" href="https://www.douyin.com/user/MS4wLjABAAAAjrnMft0YHrrr-YoewR7ahaWKKX87CLOmIkyCh5w4J7bDDeOxVGtI_eGYWJrwD1FB?from_tab_name=main&vid=7644936083704646245"
-             target="_blank" rel="noopener noreferrer">抖音主页 <span aria-hidden="true">↗</span></a>
-          <a class="social-btn" href="https://space.bilibili.com/3461582206012161"
-             target="_blank" rel="noopener noreferrer">BiliBili主页 <span aria-hidden="true">↗</span></a>
-        </div>
+        <address class="contact-box">
+          <div class="contact-line">
+            <span>Email</span>
+            <a href="mailto:zqc0225nnu@outlook.com">zqc0225nnu@outlook.com</a>
+          </div>
+          <div class="contact-line">
+            <span>Location</span>
+            <strong>China / Nanjing / NNU<br>南京师范大学（随园校区）</strong>
+          </div>
+          <div class="contact-line">
+            <span>Focus</span>
+            <strong>Education · Design · Research</strong>
+          </div>
+        </address>
       </div>
-      <div class="contact-box">
-        <div class="contact-line">
-          <span>Email</span>
-          <strong>zqc0225nnu@outlook.com</strong>
-        </div>
-        <div class="contact-line">
-          <span>Location</span>
-          <strong>China / Nanjing / NNU<br>南京师范大学（随园校区）</strong>
-        </div>
-        <div class="contact-line">
-          <span>Focus</span>
-          <strong>Education · Design · Research</strong>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="footer">
     <span>© 2026 Zhu Qinchi Personal Homepage</span>
-    <span>Ride the wind and break the waves 无限进步</span>
+    <span>Ride the wind and break the waves · 无限进步</span>
   </footer>
-
-  <script>
-    /*
-      首页背景媒体配置：
-      1. 默认优先读取 hero-video.mp4 / hero-video.webm。
-      2. 如果视频不存在或加载失败，会继续尝试 hero-image.jpg / hero-image.png / hero-image.webp。
-      3. 如果你想指定一个文件，直接修改 CUSTOM_HERO_MEDIA，例如：
-         const CUSTOM_HERO_MEDIA = "my-cover.mp4";
-         const CUSTOM_HERO_MEDIA = "my-photo.jpg";
-      4. 也可以在地址栏临时预览：index.html?media=my-video.mp4
-    */
-    const CUSTOM_HERO_MEDIA = "";
-
-    const mediaCandidates = [
-      CUSTOM_HERO_MEDIA,
-      new URLSearchParams(window.location.search).get("media"),
-      "hero-video.mp4",
-      "hero-video.webm",
-      "hero-image.jpg",
-      "hero-image.png",
-      "hero-image.webp"
-    ].filter(Boolean);
-
-    const videoTypes = ["mp4", "webm", "ogg", "ogv", "mov", "m4v"];
-    const imageTypes = ["jpg", "jpeg", "png", "webp", "gif", "avif", "svg"];
-
-    const heroMedia = document.getElementById("heroMedia");
-    const mediaStatusText = document.getElementById("mediaStatusText");
-
-    function setMediaStatus(text) {
-      if (mediaStatusText) mediaStatusText.textContent = text;
-    }
-
-    function getExtension(fileName) {
-      return fileName.split("?")[0].split("#")[0].split(".").pop().toLowerCase();
-    }
-
-    function loadHeroMedia(index = 0) {
-      if (index >= mediaCandidates.length) {
-        setMediaStatus("DYNAMIC FALLBACK");
-        return;
-      }
-
-      const src = mediaCandidates[index];
-      const ext = getExtension(src);
-      heroMedia.innerHTML = "";
-      heroMedia.classList.remove("loaded");
-
-      if (videoTypes.includes(ext)) {
-        const video = document.createElement("video");
-        video.src = src;
-        video.autoplay = true;
-        video.muted = true;
-        video.loop = true;
-        video.playsInline = true;
-        video.setAttribute("preload", "auto");
-        video.setAttribute("aria-hidden", "true");
-
-        video.addEventListener("canplay", () => {
-          heroMedia.classList.add("loaded");
-          setMediaStatus("VIDEO BACKGROUND");
-          video.play().catch(() => {});
-        }, { once: true });
-
-        video.addEventListener("error", () => loadHeroMedia(index + 1), { once: true });
-        heroMedia.appendChild(video);
-        video.load();
-        return;
-      }
-
-      if (imageTypes.includes(ext)) {
-        const image = document.createElement("img");
-        image.src = src;
-        image.alt = "";
-        image.setAttribute("aria-hidden", "true");
-
-        image.addEventListener("load", () => {
-          heroMedia.classList.add("loaded");
-          setMediaStatus("IMAGE BACKGROUND");
-        }, { once: true });
-
-        image.addEventListener("error", () => loadHeroMedia(index + 1), { once: true });
-        heroMedia.appendChild(image);
-        return;
-      }
-
-      loadHeroMedia(index + 1);
-    }
-
-    loadHeroMedia();
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach((el, index) => {
-      el.style.transitionDelay = `${Math.min(index * 70, 420)}ms`;
-      observer.observe(el);
-    });
-  </script>
 </body>
 </html>

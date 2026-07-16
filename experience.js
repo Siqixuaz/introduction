@@ -1,0 +1,562 @@
+const experienceData = {
+      "internship": [
+            {
+                  "date": "2025.07.01 — 2025.08.31",
+                  "category": "实习经历",
+                  "title": "江苏省盐城市盐都区人民政府 · 数据局",
+                  "subtitle": "数据应用办事员",
+                  "desc": "参与区级政务数据平台日常运维，协助完成万余条数据记录的清洗、分类与录入；独立核查“一网通办”系统部分模块，修正数据逻辑错误，并辅助完成月度数据应用分析报告。",
+                  "focus": "政务数据 / 数据核查 / Excel 可视化 / 报告支持",
+                  "detailTitle": "主要职责",
+                  "bullets": [
+                        "协助完成超过万余条数据记录的清洗、分类与录入，保障数据更新及时性。",
+                        "独立负责“一网通办”系统部分模块的数据核查与校对，发现并修正 20 余处数据逻辑错误。",
+                        "利用 Excel 数据透视与图表制作，协助撰写《月度数据应用分析报告》。"
+                  ],
+                  "skills": [
+                        "政务数据",
+                        "Excel",
+                        "数据透视表",
+                        "数据核查",
+                        "可视化图表"
+                  ],
+                  "proofs": [
+                        "实习证明 proof-intern-data-01.jpg",
+                        "工作照片 proof-intern-data-02.jpg",
+                        "报告截图 proof-intern-data-03.jpg"
+                  ],
+                  "latest": true
+            },
+            {
+                  "date": "2024.07.08 — 2024.08.15",
+                  "category": "实习经历",
+                  "title": "江苏黄海湿地研究院有限公司 · 综合部",
+                  "subtitle": "实习生",
+                  "desc": "主导研究院过往科研资料的数字化整理与分类，参与黄海湿地博物馆暑期科普活动筹备，并协助湿地生态监测报告的数据整理工作。",
+                  "focus": "科研资料整理 / 活动筹备 / 生态数据 / 现场支持",
+                  "detailTitle": "主要职责",
+                  "bullets": [
+                        "完成研究院科研资料数字化整理与分类，涉及文件 200 余份。",
+                        "协助筹备黄海湿地博物馆暑期科普活动，负责物料准备、嘉宾联络与现场支持，活动覆盖线上线下 500 余人次。",
+                        "参与湿地生态监测报告初步数据整理，支持研究员完成数据录入与可视化分析。"
+                  ],
+                  "skills": [
+                        "资料数字化",
+                        "活动统筹",
+                        "生态监测",
+                        "Office",
+                        "数据整理"
+                  ],
+                  "proofs": [
+                        "实习证明 proof-intern-wetland-01.jpg",
+                        "活动照片 proof-intern-wetland-02.jpg",
+                        "资料整理 proof-intern-wetland-03.jpg"
+                  ]
+            },
+            {
+                  "date": "2023.07.10 — 2023.08.10",
+                  "category": "实习经历",
+                  "title": "扬州市宝应县安宜镇政府 · 党群工作局",
+                  "subtitle": "暑期见习大学生",
+                  "desc": "参加 2023 年宝应籍大学生暑期见习行动，承担综合事务处理与社区党建活动协助工作，积累基层政务实践经验。",
+                  "focus": "基层政务 / 公文处理 / 信息录入 / 社区党建",
+                  "detailTitle": "主要职责",
+                  "bullets": [
+                        "高效处理公文收发、信息录入等综合性事务，保障部门日常工作顺畅运行。",
+                        "参与组织社区党建活动，协助完成场地布置与人员协调。",
+                        "在基层治理场景中提升行政事务处理和群众沟通能力。"
+                  ],
+                  "skills": [
+                        "公文处理",
+                        "信息录入",
+                        "基层服务",
+                        "活动协助",
+                        "组织协调"
+                  ],
+                  "proofs": [
+                        "见习证明 proof-intern-gov-01.jpg",
+                        "工作照片 proof-intern-gov-02.jpg",
+                        "活动记录 proof-intern-gov-03.jpg"
+                  ]
+            }
+      ],
+      "volunteer": [
+            {
+                  "date": "2025.12.28 — 2026.01.04",
+                  "category": "志愿服务",
+                  "title": "2026 原神☆FES",
+                  "subtitle": "志愿者组长",
+                  "desc": "米哈游举办的大型漫展活动，每日现场参与人数超过 2 万人次。作为现场 coser 协助组志愿者组长，管理约 50 位志愿者团队。",
+                  "focus": "大型漫展 / 志愿者管理 / Coser 协助 / 现场统筹",
+                  "detailTitle": "服务内容",
+                  "bullets": [
+                        "管理约 50 位志愿者团队，协助现场 coser 相关服务工作。",
+                        "策划官方 coser 出场顺序、出场地点及 coser 趣味活动。",
+                        "在高人流量活动场景中进行现场协调、流程推进与秩序协助。"
+                  ],
+                  "skills": [
+                        "团队管理",
+                        "现场统筹",
+                        "活动执行",
+                        "沟通协调",
+                        "应急配合"
+                  ],
+                  "proofs": [
+                        "志愿证明 proof-vol-genshin-01.jpg",
+                        "现场照片 proof-vol-genshin-02.jpg",
+                        "服务记录 proof-vol-genshin-03.jpg"
+                  ],
+                  "latest": true
+            },
+            {
+                  "date": "2025.07.18 — 2025.07.20",
+                  "category": "志愿服务",
+                  "title": "雅迪717 · 盐城中华海棠园 · 银河左岸音乐节",
+                  "subtitle": "志愿者",
+                  "desc": "参与大型音乐节志愿服务，活动单日最高人数 6.28 万人次；作为检票组志愿者，负责观众检录与身份验证。",
+                  "focus": "大型演出 / 检票组 / 身份核验 / 人流服务",
+                  "detailTitle": "服务内容",
+                  "bullets": [
+                        "负责观众检录、身份验证及入场秩序协助。",
+                        "配合检票组完成高峰时段人流疏导。",
+                        "在大型活动现场积累高强度公共服务经验。"
+                  ],
+                  "skills": [
+                        "检票服务",
+                        "身份核验",
+                        "秩序维护",
+                        "现场协作"
+                  ],
+                  "proofs": [
+                        "志愿证明 proof-vol-music-01.jpg",
+                        "现场照片 proof-vol-music-02.jpg",
+                        "服务记录 proof-vol-music-03.jpg"
+                  ]
+            },
+            {
+                  "date": "2025.04.10 — 2025.07.15",
+                  "category": "志愿服务",
+                  "title": "2025 年第二十二届五一数学建模竞赛",
+                  "subtitle": "优秀组织者",
+                  "desc": "负责宣传、组织盐城工学院学生参加数学建模竞赛，并联系专业老师指导学生参赛；获评活动“优秀组织者”。",
+                  "focus": "竞赛组织 / 宣传动员 / 教师联络 / 参赛支持",
+                  "detailTitle": "服务内容",
+                  "bullets": [
+                        "宣传并组织盐城工学院学生报名参与数学建模竞赛。",
+                        "联系专业老师，为学生参赛提供指导支持。",
+                        "因组织工作表现突出，获评活动“优秀组织者”。"
+                  ],
+                  "skills": [
+                        "竞赛组织",
+                        "宣传动员",
+                        "师生联络",
+                        "统筹协调"
+                  ],
+                  "proofs": [
+                        "优秀组织者 proof-vol-mayday-01.jpg",
+                        "组织材料 proof-vol-mayday-02.jpg",
+                        "活动截图 proof-vol-mayday-03.jpg"
+                  ]
+            },
+            {
+                  "date": "2025.03.30",
+                  "category": "志愿服务",
+                  "title": "2025 悦达起亚盐城马拉松",
+                  "subtitle": "志愿者点位长",
+                  "desc": "担任赛事志愿者点位长，负责分配组内志愿者工作，做好赛事过程保障，并获评“优秀志愿者”。",
+                  "focus": "赛事保障 / 点位管理 / 志愿者分工 / 秩序服务",
+                  "detailTitle": "服务内容",
+                  "bullets": [
+                        "作为点位长分配组内志愿者工作，明确服务任务与岗位职责。",
+                        "协助做好赛事过程保障和现场服务。",
+                        "获盐城市青年志愿者协会颁发“优秀志愿者”。"
+                  ],
+                  "skills": [
+                        "点位管理",
+                        "任务分工",
+                        "赛事服务",
+                        "责任意识"
+                  ],
+                  "proofs": [
+                        "优秀志愿者 proof-vol-marathon-01.jpg",
+                        "现场照片 proof-vol-marathon-02.jpg",
+                        "服务记录 proof-vol-marathon-03.jpg"
+                  ]
+            },
+            {
+                  "date": "2024.12.14 — 2024.12.15",
+                  "category": "志愿服务",
+                  "title": "2024 年沿海人才发展大会",
+                  "subtitle": "志愿者组长",
+                  "desc": "担任大会现场组总负责，统筹现场活动、会议流程与志愿者队伍管理。",
+                  "focus": "会议服务 / 现场总负责 / 流程统筹 / 团队管理",
+                  "detailTitle": "服务内容",
+                  "bullets": [
+                        "负责大会现场组整体工作安排。",
+                        "统筹现场活动及会议流程，协调志愿者队伍。",
+                        "保障大会期间各项服务环节顺畅衔接。"
+                  ],
+                  "skills": [
+                        "会议统筹",
+                        "志愿者管理",
+                        "流程管理",
+                        "现场执行"
+                  ],
+                  "proofs": [
+                        "志愿证明 proof-vol-talent-01.jpg",
+                        "现场照片 proof-vol-talent-02.jpg",
+                        "会议记录 proof-vol-talent-03.jpg"
+                  ]
+            },
+            {
+                  "date": "2024.09.15",
+                  "category": "志愿服务",
+                  "title": "第八届全国净滩公益活动（盐城分会场）",
+                  "subtitle": "志愿者代表",
+                  "desc": "作为盐城工学院“徐秀娟”黄海湿地志愿者协会代表参加开幕仪式、净滩活动，并深入社区宣传环保理念。",
+                  "focus": "生态公益 / 志愿者代表 / 净滩行动 / 环保宣传",
+                  "detailTitle": "服务内容",
+                  "bullets": [
+                        "代表协会参加活动开幕仪式。",
+                        "参与净滩公益行动，助力滨海环境保护。",
+                        "深入社区宣传环保理念与湿地保护价值。"
+                  ],
+                  "skills": [
+                        "生态保护",
+                        "公众宣传",
+                        "公益服务",
+                        "代表发言"
+                  ],
+                  "proofs": [
+                        "活动证明 proof-vol-beach-01.jpg",
+                        "现场照片 proof-vol-beach-02.jpg",
+                        "宣传记录 proof-vol-beach-03.jpg"
+                  ]
+            },
+            {
+                  "date": "2024.08.24",
+                  "category": "志愿服务",
+                  "title": "2024 洋河 M6+ 盐城群星演唱会",
+                  "subtitle": "志愿者组长",
+                  "desc": "参与大型演唱会志愿服务，活动观众超 3.3 万人次；统筹 100 余人检票组工作，负责场控及突发事件应对。",
+                  "focus": "大型演唱会 / 百人团队 / 检票统筹 / 场控应急",
+                  "detailTitle": "服务内容",
+                  "bullets": [
+                        "统筹 100 余人检票组的检票工作。",
+                        "负责部分场控工作与现场突发事件应对。",
+                        "在大型文娱活动中提升现场组织与高压协调能力。"
+                  ],
+                  "skills": [
+                        "大型活动",
+                        "团队统筹",
+                        "场控应急",
+                        "检票管理"
+                  ],
+                  "proofs": [
+                        "志愿证明 proof-vol-concert-01.jpg",
+                        "现场照片 proof-vol-concert-02.jpg",
+                        "组长记录 proof-vol-concert-03.jpg"
+                  ]
+            },
+            {
+                  "date": "2023.09.23 — 2023.09.26",
+                  "category": "志愿服务",
+                  "title": "2023 盐城全球滨海论坛",
+                  "subtitle": "志愿者",
+                  "desc": "参与国际性会议志愿服务，负责盐城高铁站参会中外宾客接驳与引导。",
+                  "focus": "国际会议 / 接驳引导 / 嘉宾服务 / 城市窗口",
+                  "detailTitle": "服务内容",
+                  "bullets": [
+                        "在盐城高铁站负责参会中外宾客接驳与引导。",
+                        "提供咨询答疑与路线指引服务。",
+                        "以志愿者身份参与城市重大会议保障。"
+                  ],
+                  "skills": [
+                        "接待引导",
+                        "服务礼仪",
+                        "英文沟通",
+                        "现场协助"
+                  ],
+                  "proofs": [
+                        "志愿证明 proof-vol-forum-01.jpg",
+                        "服务照片 proof-vol-forum-02.jpg",
+                        "接待记录 proof-vol-forum-03.jpg"
+                  ]
+            },
+            {
+                  "date": "2023.06.11",
+                  "category": "志愿服务",
+                  "title": "2023 中华龙舟大赛 · 盐城站",
+                  "subtitle": "志愿者",
+                  "desc": "参与赛事志愿服务，协助运动员检录与现场秩序维护。",
+                  "focus": "体育赛事 / 运动员检录 / 秩序维护 / 现场服务",
+                  "detailTitle": "服务内容",
+                  "bullets": [
+                        "协助运动员进行检录。",
+                        "配合现场工作人员维护赛事秩序。",
+                        "完成赛事服务岗位安排的相关任务。"
+                  ],
+                  "skills": [
+                        "赛事服务",
+                        "检录协助",
+                        "秩序维护",
+                        "团队配合"
+                  ],
+                  "proofs": [
+                        "志愿证明 proof-vol-dragon-01.jpg",
+                        "现场照片 proof-vol-dragon-02.jpg",
+                        "服务记录 proof-vol-dragon-03.jpg"
+                  ]
+            }
+      ],
+      "cadre": [
+            {
+                  "date": "2024.10 — 2025.10",
+                  "category": "学生干部",
+                  "title": "盐城工学院“螺丝钉”青年志愿者协会",
+                  "subtitle": "主席",
+                  "desc": "全面负责协会日常运营与战略规划，领导 7 个部门及 16 个学院分会，培养核心骨干 20 余名，累计开展 50 余项志愿服务活动，服务时长超 70000 小时。",
+                  "focus": "协会治理 / 七部门联动 / 校级志愿服务 / 品牌项目",
+                  "detailTitle": "任职工作",
+                  "bullets": [
+                        "主持定期工作例会，部署、督促和检查各项工作。",
+                        "主导“献血车进校园”“红十字急救培训”等项目的开展实施并长期开展。",
+                        "协会获“江苏省百佳学生社团”“盐城工学院十佳学生社团”等荣誉，并受邀成为盐城市志愿者协会理事单位。"
+                  ],
+                  "skills": [
+                        "组织管理",
+                        "战略规划",
+                        "志愿服务",
+                        "团队培养",
+                        "项目落地"
+                  ],
+                  "proofs": [
+                        "任职证明 proof-cadre-screw-01.jpg",
+                        "活动照片 proof-cadre-screw-02.jpg",
+                        "荣誉截图 proof-cadre-screw-03.jpg"
+                  ],
+                  "latest": true
+            },
+            {
+                  "date": "2024.10 — 2025.10",
+                  "category": "学生干部",
+                  "title": "盐城工学院数理学院学生会社会实践（志愿服务）部",
+                  "subtitle": "部长",
+                  "desc": "全面负责部门工作，领导 15 人干事团队，设立“数理学院志愿者团”管理全院热爱志愿服务的学生 300 余人，主导策划多个社会实践与志愿服务品牌项目。",
+                  "focus": "部门管理 / 志愿者体系 / 社会实践 / 外部资源拓展",
+                  "detailTitle": "任职工作",
+                  "bullets": [
+                        "通过定期培训与团建提升团队执行力，推动志愿服务团队制度化运作。",
+                        "主导策划“徐秀娟精神·湿地保护”等品牌项目，任盐城工学院“徐秀娟黄海湿地保护志愿者协会”负责人。",
+                        "任职期间学院累计开展 30 余项社会实践活动，累计志愿服务时长超过 1000 小时，并与 3 家社区及 1 处社会工作站建立稳定合作关系。"
+                  ],
+                  "skills": [
+                        "部门建设",
+                        "品牌项目",
+                        "资源对接",
+                        "团队培训",
+                        "社会实践"
+                  ],
+                  "proofs": [
+                        "任职证明 proof-cadre-practice-01.jpg",
+                        "项目照片 proof-cadre-practice-02.jpg",
+                        "媒体报道 proof-cadre-practice-03.jpg"
+                  ]
+            },
+            {
+                  "date": "2022.09 — 2026.06",
+                  "category": "学生干部",
+                  "title": "盐城工学院 B 数据 222 班",
+                  "subtitle": "班长兼团支部副书记",
+                  "desc": "长期承担班级日常管理与团支部建设工作，主导策划 10 余场班级与团日活动，平均参与率超过 90%，并带领班级获评盐城工学院 2024 年度“活力团支部”。",
+                  "focus": "班级治理 / 团支部建设 / 团日活动 / 凝聚力提升",
+                  "detailTitle": "任职工作",
+                  "bullets": [
+                        "策划 10 余场班级与团日活动，提升班级凝聚力与团支部活力。",
+                        "创新策划开展“保护大美湿地”户外主题团课。",
+                        "任职期间带领班级荣获盐城工学院 2024 年度“活力团支部”。"
+                  ],
+                  "skills": [
+                        "班级管理",
+                        "团务工作",
+                        "活动策划",
+                        "组织协调",
+                        "凝聚力建设"
+                  ],
+                  "proofs": [
+                        "任职证明 proof-cadre-class-01.jpg",
+                        "团日活动 proof-cadre-class-02.jpg",
+                        "荣誉截图 proof-cadre-class-03.jpg"
+                  ]
+            },
+            {
+                  "date": "2023.09 — 2024.09",
+                  "category": "学生干部",
+                  "title": "盐城工学院数理学院 2023 级（B 数据 232 班）",
+                  "subtitle": "助理班主任",
+                  "desc": "服务学院 2023 级新生适应大学生活，开学前通过线上群聊为 160 余名新生解答入学疑问，组织 4 场小规模新生班级团队建设活动。",
+                  "focus": "新生引导 / 入学答疑 / 团队建设 / 班级适应",
+                  "detailTitle": "任职工作",
+                  "bullets": [
+                        "通过线上群聊为学院 2023 级 160 余名新生解答入学疑问。",
+                        "帮助新生熟悉校园环境与规章制度。",
+                        "组织 4 场小规模新生班级团队建设活动，促进新生快速融入。"
+                  ],
+                  "skills": [
+                        "新生引导",
+                        "答疑服务",
+                        "班级建设",
+                        "沟通协调"
+                  ],
+                  "proofs": [
+                        "聘书 proof-cadre-assistant-01.jpg",
+                        "团建照片 proof-cadre-assistant-02.jpg",
+                        "工作记录 proof-cadre-assistant-03.jpg"
+                  ]
+            },
+            {
+                  "date": "2024.10 — 2025.10",
+                  "category": "学生干部",
+                  "title": "盐城工学院书法协会",
+                  "subtitle": "副会长",
+                  "desc": "负责开展协会生活与组织协会活动，联系社区开展“翰墨迎新春”送春联进社区活动，书写百余幅“福”字及对联赠送社区居民。",
+                  "focus": "社团运营 / 社区服务 / 传统文化 / 活动组织",
+                  "detailTitle": "任职工作",
+                  "bullets": [
+                        "组织协会日常活动，参与协会运行和成员协作。",
+                        "联系社区开展“翰墨迎新春”送春联进社区活动。",
+                        "书写百余幅“福”字及对联赠送给社区老人孩子，并指导社区孩子写春联、画国画。"
+                  ],
+                  "skills": [
+                        "社团管理",
+                        "书法活动",
+                        "社区联动",
+                        "文化传播"
+                  ],
+                  "proofs": [
+                        "任职证明 proof-cadre-calligraphy-01.jpg",
+                        "活动照片 proof-cadre-calligraphy-02.jpg",
+                        "媒体报道 proof-cadre-calligraphy-03.jpg"
+                  ]
+            }
+      ]
+};
+
+    const indexButtons = document.querySelectorAll('.index-btn');
+    const archiveTitle = document.querySelector('#archiveTitle');
+    const archiveIntro = document.querySelector('#archiveIntro');
+    const timeline = document.querySelector('#timeline');
+    const featuredImage = document.querySelector('.featured-photo img');
+
+    if (featuredImage) {
+      const photo = featuredImage.parentElement;
+      const showImage = () => photo.classList.remove('no-image');
+      const showPlaceholder = () => {
+        photo.classList.add('no-image');
+        featuredImage.remove();
+      };
+
+      if (featuredImage.complete) {
+        if (featuredImage.naturalWidth > 0) {
+          showImage();
+        } else {
+          showPlaceholder();
+        }
+      } else {
+        featuredImage.addEventListener('load', showImage, { once: true });
+        featuredImage.addEventListener('error', showPlaceholder, { once: true });
+      }
+    }
+
+    const introMap = {
+      internship: '当前展示实习经历：政务数据、科研机构、工程项目、基层政务与市场数据分析等岗位实践。',
+      volunteer: '当前展示志愿服务：大型赛事、会议接待、音乐节、漫展、生态公益与竞赛组织等公共服务经历。',
+      cadre: '当前展示学生干部经历：班级建设、协会治理、部门管理、社团活动组织与志愿服务体系建设。'
+    };
+
+    function escapeHTML(value) {
+      return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    function formatDateRange(value) {
+      return escapeHTML(value)
+        .split(' — ')
+        .map(part => `<span>${part}</span>`)
+        .join('<i aria-hidden="true">—</i>');
+    }
+
+    function renderExperienceCards(filter) {
+      const items = experienceData[filter] || [];
+      timeline.innerHTML = items.map((item, index) => {
+        const no = String(index + 1).padStart(2, '0');
+        const latest = item.latest ? '<span class="latest-badge">最新</span>' : '';
+        const bullets = item.bullets.map(text => `<li>${escapeHTML(text)}</li>`).join('');
+        const proofs = item.proofs.map(text => `<div class="proof-item"><span>${escapeHTML(text).replace(/ /g, '<br>')}</span></div>`).join('');
+        const headingLabel = filter === 'internship' ? '任职单位' : filter === 'volunteer' ? '服务项目' : '任职组织';
+        const roleLabel = filter === 'volunteer' ? '服务身份' : '职位名称';
+
+        return `
+          <article class="experience-card" data-category="${escapeHTML(filter)}">
+            <div class="exp-time" aria-label="时间：${escapeHTML(item.date)}">
+              <span class="exp-time-label">TIME</span>
+              <time class="exp-time-value">${formatDateRange(item.date)}</time>
+            </div>
+            <div class="exp-box">
+              <div class="exp-mainline">
+                <div class="exp-topline">
+                  <span class="exp-index">${no}</span>
+                  <div class="exp-meta">
+                    <span class="pill">${escapeHTML(item.category)}</span>
+                    ${latest}
+                  </div>
+                </div>
+                <span class="exp-heading-label">${headingLabel}</span>
+                <h3 class="exp-title">${escapeHTML(item.title)}</h3>
+                <div class="exp-role">
+                  <span>${roleLabel}</span>
+                  <strong>${escapeHTML(item.subtitle)}</strong>
+                </div>
+                <p class="exp-desc">${escapeHTML(item.desc)}</p>
+              </div>
+              <div class="exp-detail">
+                <div class="detail-block">
+                  <h4>${escapeHTML(item.detailTitle)}</h4>
+                  <ul>${bullets}</ul>
+                </div>
+              </div>
+              <details class="proof">
+                <summary>查看相关证明材料 <span aria-hidden="true">→</span></summary>
+                <div class="proof-grid">${proofs}</div>
+              </details>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function showCategory(filter, title, shouldScroll = true) {
+      archiveTitle.textContent = title;
+      archiveIntro.textContent = introMap[filter] || '这里会显示当前类别下的多条详细经历。';
+      renderExperienceCards(filter);
+
+      indexButtons.forEach((button) => {
+        button.classList.toggle('active', button.dataset.filter === filter);
+      });
+
+      if (shouldScroll) {
+        document.querySelector('#archive').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    indexButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        showCategory(button.dataset.filter, button.dataset.title);
+      });
+    });
+
+    showCategory('internship', '实习经历', false);
