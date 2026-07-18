@@ -11,23 +11,24 @@
 <body>
   <div class="cert-noise" aria-hidden="true"></div>
 
-  <header class="cert-hero">
-    <nav class="cert-nav cert-shell" aria-label="证书页面导航">
-      <a class="cert-brand" href="index.html" aria-label="返回个人主页">
-        <span class="cert-brand-mark" aria-hidden="true">Z</span>
-        <span>PERSONAL PORTFOLIO</span>
-      </a>
-      <div class="cert-nav-links">
-        <a href="index.html">首页</a>
-        <a href="projects.html">代表项目</a>
-      </div>
-    </nav>
+  <nav class="nav" aria-label="主导航">
+    <a class="brand" href="index.html" aria-label="返回首页">
+      <span class="brand-mark" aria-hidden="true">P</span>
+      <span>PERSONAL HOME</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#about">关于我</a>
+      <a href="projects.html">精选项目</a>
+      <a href="experience.html">工作经历</a>
+    </div>
+  </nav>
 
+  <header class="cert-hero">
     <div class="cert-shell cert-hero-content">
       <div>
         <p class="cert-eyebrow"><span></span>CERTIFICATE RECORD · 2025</p>
         <h1>“华中杯”<br>大学生数学建模挑战赛</h1>
-        <p class="cert-hero-note">第十七届 · 本科组 · 荣誉证书</p>
+        <p class="cert-hero-note">第十七届 · 本科组 · 一等奖</p>
       </div>
     </div>
   </header>
@@ -92,6 +93,17 @@
         <h2 id="competition-title">竞赛简介</h2>
         <p>“华中杯”大学生数学建模挑战赛前身为华中地区大学生数学建模邀请赛，2021年更为现名。竞赛鼓励学生运用数学方法分析和解决实际问题，培养建模、求解、写作、协作与创新能力。</p>
         <p>第十七届赛事于2025年4月17日至20日举行，采用匿名评审方式，从全国304所高校的4213支报名队伍中评选出一等奖130队。</p>
+
+        <dl class="cert-competition-organizers">
+          <div>
+            <dt>主办单位</dt>
+            <dd>湖北省工业与应用数学学会</dd>
+          </div>
+          <div>
+            <dt>协办单位</dt>
+            <dd>武汉大学、华中科技大学、华中师范大学、中南财经政法大学、华中农业大学、中国地质大学（武汉）、武汉理工大学、湖北大学、武汉科技大学、中南民族大学</dd>
+          </div>
+        </dl>
       </article>
 
       <aside class="cert-stats" aria-label="竞赛数据">
@@ -110,30 +122,41 @@
       </aside>
     </section>
 
-    <section class="cert-organizers" aria-labelledby="organizers-title">
-      <div class="cert-section-head">
-        <p class="cert-kicker">Organization</p>
-        <h2 id="organizers-title">组织信息</h2>
-      </div>
+    <section class="cert-methods" aria-labelledby="methods-title">
+      <p class="cert-kicker">Modeling Approach</p>
+      <h2 id="methods-title">建模方法</h2>
+      <p class="cert-method-intro">论文围绕校园共享单车的数量估算、车辆调度、点位优化和故障巡检，构建了由数据分析到运营决策的四阶段模型。</p>
 
-      <dl class="cert-organizer-grid">
-        <div>
-          <dt>主办单位</dt>
-          <dd>湖北省工业与应用数学学会</dd>
-        </div>
-        <div>
-          <dt>承办单位</dt>
-          <dd>泰迪智能科技（武汉）有限公司</dd>
-        </div>
-        <div>
-          <dt>支持单位</dt>
-          <dd>北太振寰（重庆）科技有限公司</dd>
-        </div>
-        <div>
-          <dt>协办单位</dt>
-          <dd>武汉大学、华中科技大学、华中师范大学等10所高校</dd>
-        </div>
-      </dl>
+      <ol class="cert-method-list">
+        <li>
+          <span>01</span>
+          <div>
+            <h3>车辆分布估算</h3>
+            <p>先统一观测时间并处理缺失值，再按建筑类型进行回归插值；对早、午、晚等时段分别进行三次多项式拟合，并用最小二乘法估计参数，得到各停车点的车辆分布与校园单车总量。</p>
+          </div>
+        </li>
+        <li>
+          <span>02</span>
+          <div>
+            <h3>高峰调度优化</h3>
+            <p>将校园道路抽象为无向图，计算停车点之间的最短距离；在车辆富余量、需求缺口、调度时间和运载容量约束下，采用贪心算法结合线性规划，优先执行单位时间运输效率最高的任务。</p>
+          </div>
+        </li>
+        <li>
+          <span>03</span>
+          <div>
+            <h3>运营效率评价</h3>
+            <p>使用层次分析法（AHP），综合调度成本、供需缺口率、车辆使用率和用户便利性，并通过一致性检验确定指标权重，据此评估现有停车点并提出合并、新增点位的布局方案。</p>
+          </div>
+        </li>
+        <li>
+          <span>04</span>
+          <div>
+            <h3>故障巡检路线</h3>
+            <p>根据单位时间可回收的故障车辆数进行贪心排序，再利用最近邻 TSP 方法优化访问顺序，在检修车容量和行驶速度约束下最小化巡检总时间，并通过灵敏度分析检验模型稳定性。</p>
+          </div>
+        </li>
+      </ol>
     </section>
 
     <div class="cert-back">

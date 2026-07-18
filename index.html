@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="朱钦迟的个人主页，展示个人介绍、代表项目、工作经历与联系方式。">
   <meta name="theme-color" content="#101613">
-  <title>思齐轩｜朱钦迟个人主页</title>
+  <title>思齐轩主站</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="index.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳到主要内容</a>
@@ -94,7 +93,7 @@
             <h3>交通需求规划与可达率研究</h3>
             <p>2024年第二十一届五一数学建模竞赛全国一等奖作品。朱钦迟负责论文撰写与数学建模任务。该竞赛由江苏省工业与应用数学学会主办，入选江苏省省级赛事目录，全国一等奖获奖率为5%。</p>
           </div>
-          <a class="btn secondary work-action" href="#contact">联系我了解更多</a>
+          <a class="btn secondary work-action" href="cert1.html">查看项目详情</a>
         </article>
 
         <div class="work-list">
@@ -198,5 +197,43 @@
     <span>© 2026 Zhu Qinchi Personal Homepage</span>
     <span>Ride the wind and break the waves · 无限进步</span>
   </footer>
+  <script>
+    const heroVideo = document.querySelector(".hero-media video");
+    
+    if (heroVideo) {
+      const showVideo = () => heroVideo.closest(".hero-media")?.classList.add("loaded");
+    
+      if (heroVideo.readyState >= 2) {
+        showVideo();
+      } else {
+        heroVideo.addEventListener("canplay", showVideo, { once: true });
+      }
+    }
+    
+    const revealItems = document.querySelectorAll(".reveal");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      revealItems.forEach((item) => item.classList.add("visible"));
+    } else {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+    
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.12 }
+      );
+    
+      revealItems.forEach((item, index) => {
+        item.style.setProperty("--reveal-delay", `${Math.min(index * 70, 420)}ms`);
+        observer.observe(item);
+      });
+    }
+    
+  </script>
 </body>
 </html>

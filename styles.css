@@ -73,7 +73,8 @@ html.home-page{
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-.home-page .nav{
+.home-page .nav,
+.certificate-page .nav{
   position: fixed;
   top: 18px;
   left: 50%;
@@ -92,7 +93,8 @@ html.home-page{
   transform: translateX(-50%);
 }
 
-.home-page .brand{
+.home-page .brand,
+.certificate-page .brand{
   display: flex;
   align-items: center;
   gap: 10px;
@@ -100,18 +102,20 @@ html.home-page{
   letter-spacing: 0.04em;
 }
 
-.home-page .brand-mark{
+.home-page .brand-mark,
+.certificate-page .brand-mark{
   width: 34px;
   height: 34px;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  color: var(--dark);
+  color: var(--dark, #101613);
   background: rgba(255, 255, 255, 0.9);
   font-family: Georgia, serif;
 }
 
-.home-page .nav-links{
+.home-page .nav-links,
+.certificate-page .nav-links{
   display: flex;
   align-items: center;
   gap: 5px;
@@ -119,13 +123,15 @@ html.home-page{
   font-size: 14px;
 }
 
-.home-page .nav-links a{
+.home-page .nav-links a,
+.certificate-page .nav-links a{
   padding: 9px 14px;
   border-radius: 999px;
   transition: color 0.25s ease, background 0.25s ease;
 }
 
-.home-page .nav-links a:hover{
+.home-page .nav-links a:hover,
+.certificate-page .nav-links a:hover{
   color: #fff;
   background: rgba(255, 255, 255, 0.14);
 }
@@ -637,7 +643,8 @@ html.home-page{
 }
 
 @media (max-width: 920px){
-  .home-page .nav-links{
+  .home-page .nav-links,
+  .certificate-page .nav-links{
     display: none;
   }
 
@@ -1211,6 +1218,7 @@ html.home-page{
       width: 100%;
       height: 100%;
       min-height: 450px;
+      margin: 0;
       overflow: hidden;
       border: 1px solid rgba(28,77,58,.10);
       border-radius: var(--radius);
@@ -1225,6 +1233,20 @@ html.home-page{
       display: block;
       object-fit: cover;
       object-position: center;
+    }
+
+    .experience-page .featured-photo figcaption{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      padding: 30px 18px 14px;
+      color: rgba(255,255,255,.88);
+      background: linear-gradient(transparent, rgba(15,23,19,.78));
+      font-size: 12px;
+      line-height: 1.6;
+      text-align: center;
     }
 
     .experience-page .featured-photo.no-image::before{
@@ -2396,7 +2418,7 @@ html.certificate-page {
 
 .certificate-page .cert-hero {
   position: relative;
-  padding: 20px 0 96px;
+  padding: 150px 0 96px;
   color: #fff;
   background:
     radial-gradient(circle at 86% 18%, rgba(185, 138, 74, 0.32), transparent 30%),
@@ -2416,57 +2438,6 @@ html.certificate-page {
   letter-spacing: -0.07em;
   white-space: nowrap;
   pointer-events: none;
-}
-
-.certificate-page .cert-nav {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 10px 0 62px;
-}
-
-.certificate-page .cert-brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 11px;
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 0.07em;
-}
-
-.certificate-page .cert-brand-mark {
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  color: var(--cert-dark);
-  background: rgba(255, 255, 255, 0.92);
-  font-family: Georgia, serif;
-  font-size: 17px;
-}
-
-.certificate-page .cert-nav-links {
-  display: flex;
-  gap: 7px;
-}
-
-.certificate-page .cert-nav-links a {
-  padding: 9px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 999px;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 13px;
-  font-weight: 800;
-  transition: color 0.2s ease, background 0.2s ease;
-}
-
-.certificate-page .cert-nav-links a:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
 }
 
 .certificate-page .cert-hero-content {
@@ -2525,7 +2496,7 @@ html.certificate-page {
 .certificate-page .cert-document,
 .certificate-page .cert-facts,
 .certificate-page .cert-info,
-.certificate-page .cert-organizers {
+.certificate-page .cert-methods {
   border: 1px solid rgba(255, 255, 255, 0.72);
   background: rgba(255, 255, 255, 0.72);
   box-shadow: var(--cert-shadow);
@@ -2580,7 +2551,7 @@ html.certificate-page {
 
 .certificate-page .cert-facts h2,
 .certificate-page .cert-about h2,
-.certificate-page .cert-section-head h2 {
+.certificate-page .cert-methods h2 {
   margin: 8px 0 0;
   color: var(--cert-dark);
   font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
@@ -2657,6 +2628,37 @@ html.certificate-page {
   line-height: 1.95;
 }
 
+.certificate-page .cert-competition-organizers {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0 0;
+}
+
+.certificate-page .cert-competition-organizers > div {
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--cert-line);
+  border-radius: 16px;
+  background: rgba(246, 243, 236, 0.66);
+}
+
+.certificate-page .cert-competition-organizers dt {
+  color: var(--cert-gold);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.certificate-page .cert-competition-organizers dd {
+  margin: 0;
+  color: var(--cert-muted);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
 .certificate-page .cert-stats {
   display: grid;
   gap: 10px;
@@ -2685,41 +2687,58 @@ html.certificate-page {
   font-weight: 800;
 }
 
-.certificate-page .cert-organizers {
+.certificate-page .cert-methods {
   margin-top: 22px;
   padding: 34px;
   border-radius: 30px;
   box-shadow: 0 20px 58px rgba(15, 22, 18, 0.09);
 }
 
-.certificate-page .cert-organizer-grid {
+.certificate-page .cert-method-intro {
+  max-width: none;
+  margin: 18px 0 0;
+  color: var(--cert-muted);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.certificate-page .cert-method-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
 }
 
-.certificate-page .cert-organizer-grid > div {
-  padding: 18px;
+.certificate-page .cert-method-list li {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 14px;
+  padding: 20px;
   border: 1px solid var(--cert-line);
-  border-radius: 18px;
+  border-radius: 20px;
   background: rgba(246, 243, 236, 0.66);
 }
 
-.certificate-page .cert-organizer-grid dt {
-  margin-bottom: 8px;
+.certificate-page .cert-method-list li > span {
   color: var(--cert-gold);
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-weight: 800;
 }
 
-.certificate-page .cert-organizer-grid dd {
+.certificate-page .cert-method-list h3 {
+  margin: 0 0 8px;
+  color: var(--cert-dark);
+  font-size: 17px;
+}
+
+.certificate-page .cert-method-list p {
   margin: 0;
   color: var(--cert-muted);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.75;
+  font-size: 13px;
+  line-height: 1.8;
 }
 
 .certificate-page .cert-back {
@@ -2747,6 +2766,299 @@ html.certificate-page {
   font-size: 12px;
 }
 
+/* ===== PPT design case page ===== */
+:root.ppt-case-page {
+  --ppt-paper: #f7f3ec;
+  --ppt-ink: #5f2528;
+  --ppt-muted: #756761;
+  --ppt-red: #b92f42;
+  --ppt-dark: #35171a;
+  --ppt-pink: #df6677;
+  --ppt-line: rgba(95, 37, 40, .14);
+}
+
+.ppt-case-page *,
+.ppt-case-page *::before,
+.ppt-case-page *::after {
+  box-sizing: border-box;
+}
+
+.ppt-case-page {
+  min-width: 864px;
+  color: var(--ppt-ink);
+  background: var(--ppt-paper);
+  font-family: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  overflow-x: auto;
+}
+
+.ppt-case-page body {
+  min-width: 864px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ppt-ink);
+  background:
+    radial-gradient(circle at 10% 8%, rgba(223, 102, 119, .12), transparent 28%),
+    linear-gradient(180deg, #f8f3ed, #f2ebe3 58%, #f8f4ee);
+}
+
+.ppt-case-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ppt-case-page .ppt-case-noise {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: .035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+}
+
+.ppt-case-page .nav {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  z-index: 40;
+  width: min(1120px, calc(100% - 36px));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px 12px 18px;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  color: rgba(255,255,255,.92);
+  background: rgba(53,23,26,.48);
+  box-shadow: 0 18px 50px rgba(26,10,12,.22);
+  backdrop-filter: blur(18px);
+  transform: translateX(-50%);
+}
+
+.ppt-case-page .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.ppt-case-page .brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--ppt-dark);
+  background: rgba(255,255,255,.92);
+  font-family: Georgia, serif;
+}
+
+.ppt-case-page .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255,255,255,.82);
+  font-size: 14px;
+}
+
+.ppt-case-page .nav-links a {
+  padding: 9px 14px;
+  border-radius: 999px;
+  transition: color .25s ease, background .25s ease;
+}
+
+.ppt-case-page .nav-links a:hover {
+  color: #fff;
+  background: rgba(255,255,255,.14);
+}
+
+.ppt-case-page .ppt-case-shell {
+  width: min(1120px, calc(100% - 36px));
+  margin-inline: auto;
+}
+
+.ppt-case-page .ppt-case-hero {
+  position: relative;
+  padding: 154px 0 88px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 82% 20%, rgba(255,214,218,.24), transparent 30%),
+    linear-gradient(135deg, var(--ppt-dark), #7e2532 58%, #bd4a5b);
+  overflow: hidden;
+}
+
+.ppt-case-page .ppt-case-hero::after {
+  content: "PPT DESIGN";
+  position: absolute;
+  right: -24px;
+  bottom: -32px;
+  color: rgba(255,255,255,.045);
+  font-family: Georgia, serif;
+  font-size: clamp(78px, 13vw, 176px);
+  line-height: .85;
+  letter-spacing: -.07em;
+  white-space: nowrap;
+}
+
+.ppt-case-page .ppt-case-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ppt-case-page .ppt-case-eyebrow,
+.ppt-case-page .ppt-case-kicker {
+  margin: 0 0 18px;
+  color: rgba(255,255,255,.68);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.ppt-case-page .ppt-case-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ppt-case-page .ppt-case-eyebrow span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f0a0ab;
+  box-shadow: 0 0 0 6px rgba(240,160,171,.16);
+}
+
+.ppt-case-page .ppt-case-hero h1 {
+  max-width: 900px;
+  margin: 0;
+  font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
+  font-size: clamp(44px, 6.4vw, 76px);
+  line-height: 1.1;
+  letter-spacing: -.05em;
+}
+
+.ppt-case-page .ppt-case-hero-note {
+  margin: 22px 0 0;
+  color: rgba(255,255,255,.72);
+  font-size: 15px;
+  letter-spacing: .06em;
+}
+
+.ppt-case-page .ppt-case-meta {
+  width: min(820px, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 10px;
+  margin: 32px 0 0;
+}
+
+.ppt-case-page .ppt-case-meta > div {
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 16px;
+  background: rgba(255,255,255,.08);
+}
+
+.ppt-case-page .ppt-case-meta dt {
+  margin-bottom: 7px;
+  color: rgba(255,255,255,.58);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.ppt-case-page .ppt-case-meta dd {
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.ppt-case-page .ppt-case-official-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255,255,255,.34);
+  border-radius: 999px;
+  color: var(--ppt-dark);
+  background: rgba(255,255,255,.92);
+  font-size: 13px;
+  font-weight: 900;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.ppt-case-page .ppt-case-official-link:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.ppt-case-page .ppt-case-summary {
+  padding: 64px 0 42px;
+}
+
+.ppt-case-page .ppt-case-summary .ppt-case-kicker {
+  margin-bottom: 10px;
+  color: var(--ppt-red);
+}
+
+.ppt-case-page .ppt-case-summary h2 {
+  margin: 0;
+  color: var(--ppt-dark);
+  font-family: Georgia, "Noto Serif SC", "Songti SC", serif;
+  font-size: 34px;
+}
+
+.ppt-case-page .ppt-case-summary > p:last-child {
+  max-width: 850px;
+  margin: 18px 0 0;
+  color: var(--ppt-muted);
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+.ppt-case-page .ppt-case-main {
+  width: 864px;
+  margin: 0 auto;
+}
+
+.ppt-case-page .ppt-case-image {
+  display: block;
+  width: 864px;
+  height: auto;
+  max-width: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.ppt-case-page .ppt-case-back {
+  display: flex;
+  justify-content: center;
+  padding: 34px 0 8px;
+}
+
+.ppt-case-page .ppt-case-back a {
+  padding: 11px 18px;
+  border: 1px solid var(--ppt-line);
+  border-radius: 999px;
+  color: var(--ppt-red);
+  background: rgba(255,255,255,.55);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.ppt-case-page .ppt-case-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 34px 0 42px;
+  color: var(--ppt-muted);
+  font-size: 12px;
+}
+
 @media (max-width: 900px) {
   .certificate-page .cert-overview,
   .certificate-page .cert-info {
@@ -2764,27 +3076,12 @@ html.certificate-page {
   }
 
   .certificate-page .cert-hero {
-    padding-bottom: 70px;
-  }
-
-  .certificate-page .cert-nav {
-    align-items: flex-start;
-    flex-direction: column;
-    padding-bottom: 48px;
-  }
-
-  .certificate-page .cert-nav-links {
-    width: 100%;
-  }
-
-  .certificate-page .cert-nav-links a {
-    flex: 1;
-    text-align: center;
+    padding: 120px 0 70px;
   }
 
   .certificate-page .cert-facts,
   .certificate-page .cert-info,
-  .certificate-page .cert-organizers {
+  .certificate-page .cert-methods {
     padding: 22px;
   }
 
@@ -2801,7 +3098,12 @@ html.certificate-page {
     gap: 4px;
   }
 
-  .certificate-page .cert-organizer-grid {
+  .certificate-page .cert-competition-organizers > div {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .certificate-page .cert-method-list {
     grid-template-columns: 1fr;
   }
 

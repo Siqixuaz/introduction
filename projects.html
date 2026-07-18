@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>代表项目｜Project Portfolio</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="projects.js" defer></script>
 </head>
 <body>
   <div class="noise"></div>
@@ -15,6 +14,11 @@
       <span class="brand-mark">P</span>
       <span>PERSONAL HOME</span>
     </a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="experience.html">工作经历</a>
+      <a class="active" href="projects.html">代表项目</a>
+    </div>
   </nav>
 
   <header class="hero">
@@ -169,30 +173,30 @@
 
         <article class="project-card reveal" data-category="design">
           <div class="project-thumb no-image">
-            <img src="project-design.jpg" alt="设计创作项目图片" />
+            <img src="project-design1.jpg" alt="心途公益，守护花蕾项目答辩PPT设计展示" />
           </div>
           <div class="project-card-body">
-            <span class="project-type">DESIGN / 设计创作</span>
-            <h3>视觉设计或宣传物料</h3>
-            <p>展示海报、活动主视觉、报名页面、视觉系统或排版设计，建议配成品图和设计说明。</p>
+            <span class="project-type">DESIGN / PPT设计</span>
+            <h3>省志愿服务大赛答辩PPT设计</h3>
+            <p>为“心途公益，守护花蕾”团队制作项目答辩PPT，协助团队在2026年江苏省青年志愿服务项目大赛中获得二等奖。</p>
             <div class="project-card-foot">
-              <span class="role-label">ROLE / 视觉统筹</span>
-              <a class="project-link" href="#">详情 →</a>
+              <span class="role-label">ROLE / PPT设计</span>
+              <a class="project-link" href="ppt-design.html">详情 →</a>
             </div>
           </div>
         </article>
 
         <article class="project-card reveal" data-category="research">
           <div class="project-thumb no-image">
-            <img src="project-data.jpg" alt="数据分析项目图片" />
+            <img src="cert1.jpg" alt="五一数学建模竞赛一等奖证书" />
           </div>
           <div class="project-card-body">
-            <span class="project-type">DATA / 数据分析</span>
-            <h3>问卷调研或数据报告</h3>
-            <p>展示问卷设计、数据清洗、可视化图表和结论提炼，适合放方法说明和核心图表。</p>
+            <span class="project-type">RESEARCH / 学术研究</span>
+            <h3>2024“五一”数学建模</h3>
+            <p>第二十一届五一数学建模竞赛全国一等奖作品《未来新城背景下的交通需求规划与可达率问题》</p>
             <div class="project-card-foot">
-              <span class="role-label">ROLE / 分析整理</span>
-              <a class="project-link" href="#">详情 →</a>
+              <span class="role-label">ROLE / 作者</span>
+              <a class="project-link" href="cert1.html">详情 →</a>
             </div>
           </div>
         </article>
@@ -221,5 +225,63 @@
   </footer>
 
   
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+    
+        document.querySelectorAll('.reveal').forEach((el, index) => {
+          el.style.transitionDelay = `${Math.min(index * 45, 360)}ms`;
+          observer.observe(el);
+        });
+    
+        const projectImages = document.querySelectorAll(
+          '.latest-visual img, .featured-visual img, .project-thumb img'
+        );
+    
+        projectImages.forEach((image) => {
+          const container = image.parentElement;
+    
+          const handleLoad = () => container.classList.remove('no-image');
+          const handleError = () => {
+            container.classList.add('no-image');
+            image.remove();
+          };
+    
+          if (image.complete) {
+            if (image.naturalWidth > 0) {
+              handleLoad();
+            } else {
+              handleError();
+            }
+            return;
+          }
+    
+          image.addEventListener('load', handleLoad, { once: true });
+          image.addEventListener('error', handleError, { once: true });
+        });
+    
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+    
+        filterButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            const filter = button.dataset.filter;
+            filterButtons.forEach((item) => item.classList.remove('active'));
+            button.classList.add('active');
+    
+            projectCards.forEach((card) => {
+              const matched = filter === 'all' || card.dataset.category === filter;
+              card.classList.toggle('is-hidden', !matched);
+            });
+          });
+        });
+    
+  </script>
 </body>
 </html>
