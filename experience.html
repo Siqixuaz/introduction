@@ -36,7 +36,7 @@
           <span>CURATED RECORDS</span>
         </div>
         <div class="summary-line">
-          <div class="summary-row"><b>03</b><small>3 段实习经历，覆盖政务数据、科研机构与基层政务实践。</small></div>
+          <div class="summary-row"><b>04</b><small>4 段实习经历，覆盖政务数据、公益服务、科研机构与基层政务实践。</small></div>
           <div class="summary-row"><b>09</b><small>9 项大型志愿服务，涵盖赛事、会议、演唱会、音乐节、漫展与生态公益。</small></div>
           <div class="summary-row"><b>05</b><small>5 段学生干部经历，突出班级建设、协会治理、部门管理与社团活动组织。</small></div>
         </div>
@@ -86,25 +86,23 @@
 
     <section class="section" id="archive">
       <div class="archive-shell">
-        <aside class="side-index">
-          <div class="side-head">
-            <strong>分类索引</strong>
-            <span>点击切换类型 · CLICK TO SWITCH</span>
-          </div>
-          <div class="index-list">
-            <button class="index-btn" type="button" data-filter="internship" data-title="实习经历"><span>实习经历</span><small>03</small></button>
-            <button class="index-btn" type="button" data-filter="volunteer" data-title="志愿服务"><span>志愿服务</span><small>09</small></button>
-            <button class="index-btn" type="button" data-filter="cadre" data-title="学生干部"><span>学生干部</span><small>05</small></button>
-          </div>
-        </aside>
-
         <div class="archive-content">
           <div class="detail-header">
-            <div>
-              <div class="kicker">Selected Archive</div>
-              <h3 id="archiveTitle">实习经历</h3>
+            <div class="detail-header-main">
+              <div class="archive-heading">
+                <div class="kicker">Selected Archive</div>
+                <div class="archive-heading-line">
+                  <h3 id="archiveTitle">实习经历</h3>
+                  <p>点击切换实践种类</p>
+                </div>
+              </div>
+
+              <div class="index-list" role="group" aria-label="经历分类索引">
+                <button class="index-btn" type="button" data-filter="internship" data-title="实习经历"><span>实习经历</span><small>04</small></button>
+                <button class="index-btn" type="button" data-filter="volunteer" data-title="志愿服务"><span>志愿服务</span><small>09</small></button>
+                <button class="index-btn" type="button" data-filter="cadre" data-title="学生干部"><span>学生干部</span><small>05</small></button>
+              </div>
             </div>
-            <p id="archiveIntro">这里会显示当前类别下的多条详细经历。你可以继续点击左侧索引切换类别。</p>
           </div>
 
           <div class="timeline" id="timeline"></div>
@@ -112,6 +110,14 @@
       </div>
     </section>
   </main>
+
+  <dialog class="proof-lightbox" id="proofLightbox" aria-label="证明材料大图预览">
+    <button class="proof-lightbox-close" type="button" aria-label="关闭大图预览">×</button>
+    <figure>
+      <img src="" alt="">
+      <figcaption></figcaption>
+    </figure>
+  </dialog>
 
   <footer class="footer" id="contact">
     <div class="footer-inner">
@@ -150,6 +156,29 @@
                             "报告截图 proof-intern-data-03.jpg"
                       ],
                       "latest": true
+                },
+                {
+                      "date": "2025.07.01 — 2025.08.30",
+                      "category": "实习经历",
+                      "title": "盐城市亭湖区心途公益服务中心",
+                      "subtitle": "爱心暑托班志愿者",
+                      "desc": "2025年暑假期间参与盐城市亭湖区心途公益服务中心组织开展的爱心暑托班志愿服务活动，以实际行动服务青少年，践行“奉献、友爱、互助、进步”的志愿服务精神。",
+                      "focus": "爱心暑托 / 青少年服务 / 公益实践 / 志愿协作",
+                      "detailTitle": "实践内容",
+                      "bullets": [
+                            "参与心途公益服务中心组织开展的爱心暑托班志愿服务活动。",
+                            "以志愿服务形式关心和服务青少年，为暑期公益活动提供支持。",
+                            "与青年志愿者协作，践行奉献、友爱、互助、进步的志愿服务精神。"
+                      ],
+                      "skills": [
+                            "青少年服务",
+                            "公益实践",
+                            "志愿协作",
+                            "责任担当"
+                      ],
+                      "proofs": [
+                            "感谢信 感谢信.jpg"
+                      ]
                 },
                 {
                       "date": "2024.07.08 — 2024.08.15",
@@ -355,7 +384,8 @@
                             "活动证明 proof-vol-beach-01.jpg",
                             "现场照片 proof-vol-beach-02.jpg",
                             "宣传记录 proof-vol-beach-03.jpg"
-                      ]
+                      ],
+                      "reportUrl": "https://www.ycit.edu.cn/info/1022/68596.htm"
                 },
                 {
                       "date": "2024.08.24",
@@ -380,7 +410,8 @@
                             "志愿证明 proof-vol-concert-01.jpg",
                             "现场照片 proof-vol-concert-02.jpg",
                             "组长记录 proof-vol-concert-03.jpg"
-                      ]
+                      ],
+                      "reportUrl": "https://mp.weixin.qq.com/s/UxPH4BUpLnre5LXuyz5iAA"
                 },
                 {
                       "date": "2023.09.23 — 2023.09.26",
@@ -568,7 +599,6 @@
     
         const indexButtons = document.querySelectorAll('.index-btn');
         const archiveTitle = document.querySelector('#archiveTitle');
-        const archiveIntro = document.querySelector('#archiveIntro');
         const timeline = document.querySelector('#timeline');
         const featuredImage = document.querySelector('.featured-photo img');
     
@@ -592,12 +622,6 @@
           }
         }
     
-        const introMap = {
-          internship: '当前展示实习经历：政务数据、科研机构、工程项目、基层政务与市场数据分析等岗位实践。',
-          volunteer: '当前展示志愿服务：大型赛事、会议接待、音乐节、漫展、生态公益与竞赛组织等公共服务经历。',
-          cadre: '当前展示学生干部经历：班级建设、协会治理、部门管理、社团活动组织与志愿服务体系建设。'
-        };
-    
         function escapeHTML(value) {
           return String(value)
             .replaceAll('&', '&amp;')
@@ -616,11 +640,18 @@
     
         function renderExperienceCards(filter) {
           const items = experienceData[filter] || [];
+          timeline.classList.remove('proof-active');
           timeline.innerHTML = items.map((item, index) => {
             const no = String(index + 1).padStart(2, '0');
             const latest = item.latest ? '<span class="latest-badge">最新</span>' : '';
             const bullets = item.bullets.map(text => `<li>${escapeHTML(text)}</li>`).join('');
-            const proofs = item.proofs.map(text => `<div class="proof-item"><span>${escapeHTML(text).replace(/ /g, '<br>')}</span></div>`).join('');
+            const firstProof = item.proofs[0] || '';
+            const proofMatch = String(firstProof).match(/^(.*?)\s+([^\s]+\.(?:jpe?g|png|webp))$/i);
+            const proofLabel = proofMatch ? proofMatch[1] : '相关证明材料';
+            const proofSrc = proofMatch ? proofMatch[2] : '';
+            const reportButton = item.reportUrl
+              ? `<a class="activity-report" href="${escapeHTML(item.reportUrl)}">查看活动报道 <span aria-hidden="true">↗</span></a>`
+              : '';
             const headingLabel = filter === 'internship' ? '任职单位' : filter === 'volunteer' ? '服务项目' : '任职组织';
             const roleLabel = filter === 'volunteer' ? '服务身份' : '职位名称';
     
@@ -653,19 +684,103 @@
                       <ul>${bullets}</ul>
                     </div>
                   </div>
-                  <details class="proof">
-                    <summary>查看相关证明材料 <span aria-hidden="true">→</span></summary>
-                    <div class="proof-grid">${proofs}</div>
-                  </details>
+                  <div class="exp-actions">
+                    <details class="proof">
+                      <summary>查看相关证明材料 <span aria-hidden="true">→</span></summary>
+                    </details>
+                    ${reportButton}
+                  </div>
                 </div>
+                <aside class="proof-viewer" aria-label="${escapeHTML(proofLabel)}">
+                  <figure>
+                    <div class="proof-image-wrap">
+                      ${proofSrc ? `<button class="proof-zoom" type="button" data-proof-src="${escapeHTML(proofSrc)}" data-proof-label="${escapeHTML(proofLabel)}" aria-label="放大查看${escapeHTML(proofLabel)}"><img src="${escapeHTML(proofSrc)}" alt="${escapeHTML(proofLabel)}" loading="lazy"></button>` : ''}
+                      <div class="proof-missing"${proofSrc ? ' hidden' : ''}>
+                        <span>证明图片待补充</span>
+                        <small>${proofSrc ? escapeHTML(proofSrc) : '尚未设置图片文件'}</small>
+                      </div>
+                    </div>
+                    <figcaption>
+                      <span>${escapeHTML(proofLabel)}</span>
+                      <time>${formatDateRange(item.date)}</time>
+                    </figcaption>
+                  </figure>
+                </aside>
               </article>
             `;
           }).join('');
+
+          const proofDetails = timeline.querySelectorAll('details.proof');
+          proofDetails.forEach((details) => {
+            const card = details.closest('.experience-card');
+            details.addEventListener('toggle', () => {
+              const box = card.querySelector('.exp-box');
+              const startPosition = box.getBoundingClientRect();
+
+              if (details.open) {
+                proofDetails.forEach((other) => {
+                  if (other !== details) other.open = false;
+                });
+              }
+
+              card.classList.toggle('proof-open', details.open);
+              timeline.classList.toggle('proof-active', Boolean(timeline.querySelector('.proof-open')));
+
+              const endPosition = box.getBoundingClientRect();
+              const offsetX = startPosition.left - endPosition.left;
+              const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+              if (Math.abs(offsetX) > 1 && !reduceMotion) {
+                box.getAnimations().forEach((animation) => animation.cancel());
+                box.animate(
+                  [
+                    { transform: `translateX(${offsetX}px)` },
+                    { transform: 'translateX(0)' }
+                  ],
+                  {
+                    duration: 460,
+                    easing: 'cubic-bezier(.22, 1, .36, 1)'
+                  }
+                );
+              }
+            });
+          });
+
+          timeline.querySelectorAll('.proof-viewer img').forEach((image) => {
+            const zoomButton = image.closest('.proof-zoom');
+            const missing = zoomButton.nextElementSibling;
+            const showImage = () => {
+              zoomButton.hidden = false;
+              missing.hidden = true;
+            };
+            const showMissing = () => {
+              zoomButton.hidden = true;
+              missing.hidden = false;
+            };
+
+            image.addEventListener('load', showImage, { once: true });
+            image.addEventListener('error', showMissing, { once: true });
+            if (image.complete) {
+              image.naturalWidth > 0 ? showImage() : showMissing();
+            }
+          });
+
+          const proofLightbox = document.querySelector('#proofLightbox');
+          const lightboxImage = proofLightbox.querySelector('img');
+          const lightboxCaption = proofLightbox.querySelector('figcaption');
+
+          timeline.querySelectorAll('.proof-zoom').forEach((button) => {
+            button.addEventListener('click', () => {
+              lightboxImage.src = button.dataset.proofSrc;
+              lightboxImage.alt = button.dataset.proofLabel;
+              lightboxCaption.textContent = button.dataset.proofLabel;
+              proofLightbox.showModal();
+            });
+          });
         }
     
         function showCategory(filter, title, shouldScroll = true) {
           archiveTitle.textContent = title;
-          archiveIntro.textContent = introMap[filter] || '这里会显示当前类别下的多条详细经历。';
           renderExperienceCards(filter);
     
           indexButtons.forEach((button) => {
@@ -681,6 +796,14 @@
           button.addEventListener('click', () => {
             showCategory(button.dataset.filter, button.dataset.title);
           });
+        });
+
+        const proofLightbox = document.querySelector('#proofLightbox');
+        const proofLightboxClose = proofLightbox.querySelector('.proof-lightbox-close');
+
+        proofLightboxClose.addEventListener('click', () => proofLightbox.close());
+        proofLightbox.addEventListener('click', (event) => {
+          if (event.target === proofLightbox) proofLightbox.close();
         });
     
         showCategory('internship', '实习经历', false);
