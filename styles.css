@@ -1849,8 +1849,7 @@ html.home-page{
 
     .projects-page .hero-layout{
       display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(300px, .72fr);
-      gap: min(6vw, 72px);
+      grid-template-columns: 1fr;
       align-items: end;
     }
 
@@ -1939,29 +1938,7 @@ html.home-page{
 
     .projects-page .btn:hover{ transform: translateY(-2px); box-shadow: 0 20px 44px rgba(0,0,0,.20); }
 
-    .projects-page .latest-card{
-      border-radius: 34px;
-      padding: 18px;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.22);
-      box-shadow: 0 28px 90px rgba(0,0,0,.25);
-      backdrop-filter: blur(18px);
-    }
-
-    .projects-page .latest-label{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      margin: 0 0 14px;
-      color: rgba(255,255,255,.72);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: .12em;
-    }
-
-    .projects-page .latest-visual,
-.projects-page .featured-visual,
+    .projects-page .featured-visual,
 .projects-page .project-thumb{
       position: relative;
       overflow: hidden;
@@ -1971,14 +1948,7 @@ html.home-page{
         radial-gradient(circle at 80% 76%, rgba(28,77,58,.28), transparent 36%);
     }
 
-    .projects-page .latest-visual{
-      aspect-ratio: 4 / 3;
-      border-radius: 25px;
-      border: 1px solid rgba(255,255,255,.20);
-    }
-
-    .projects-page .latest-visual img,
-.projects-page .featured-visual img,
+    .projects-page .featured-visual img,
 .projects-page .project-thumb img{
       width: 100%;
       height: 100%;
@@ -1986,8 +1956,7 @@ html.home-page{
       object-fit: cover;
     }
 
-    .projects-page .latest-visual.no-image::after,
-.projects-page .featured-visual.no-image::after,
+    .projects-page .featured-visual.no-image::after,
 .projects-page .project-thumb.no-image::after{
       position: absolute;
       left: 18px;
@@ -1996,18 +1965,6 @@ html.home-page{
       font-size: 12px;
       font-weight: 900;
       letter-spacing: .12em;
-    }
-
-    .projects-page .latest-title{
-      margin: 18px 0 8px;
-      font-size: 22px;
-      line-height: 1.24;
-    }
-
-    .projects-page .latest-desc{
-      margin: 0;
-      color: rgba(255,255,255,.70);
-      line-height: 1.72;
     }
 
     .projects-page .section{ padding: 82px 0; }
